@@ -1,0 +1,242 @@
+* {
+	font-family: 'PT Sans', sans-serif, Arial, Helvetica;
+	color: #444;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+
+a, a:visited {
+	color: black;
+}
+
+a:hover {
+	color: red;
+}
+
+#map {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+}
+#modesPanel {
+	position: absolute;
+	top: 70px;
+	left: 10px;
+	width: 200px;
+	z-index: 9999;
+	box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.2);
+}
+#modesPanel .div {
+	margin: 1px;
+	background: #fff;
+	padding: 10px;
+}
+#tooltip {
+	position: absolute;
+	z-index: 999999;
+	left: 0px;
+	top: 0px;
+	visibility: hidden;
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
+	background: rgba(255,255,255,0.9);
+}
+#head {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+	z-index: 99999;
+	background: rgba(255,255,255,0.9);
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.05);
+}
+
+#head-right {
+	float: right;
+	margin-right: 20px;
+}
+
+#head-logo {
+	font-size: 32px;
+	line-height: 60px;
+	margin-left: 20px;
+	background: url('img/walking-man.svg') no-repeat 0px;
+	padding-left: 35px;
+}
+
+#head-disqus, #head-share, #head-about {
+	display: inline-block;
+	margin: 0 20px;
+	line-height: 60px;
+	cursor: pointer;
+}
+
+#share-like {
+	display: inline-block;
+	line-height: 60px;
+}
+
+#share-like > span {
+	margin-left: 10px;
+	line-height: 60px;
+}
+
+.mode-inactive {
+	background: #fff;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.mode-inactive:hover {
+	color: #D20;
+}
+
+.mode-active {
+	background: #555;
+	color: #e0e0e0;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.mode-active:hover {
+	color: #ffffff;
+}
+
+
+#sidepanel {
+	position: absolute;
+	display: none;
+	top: 70px;
+	right: 10px;
+	width: 320px;
+	overflow: auto;
+	z-index: 10000;
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.2);
+}
+#panelheader {
+	padding: 20px;
+	color: black;
+}
+		
+#panelphoto {
+	padding: 0;
+	text-align: center;
+}
+		
+#panelphoto > img {
+	margin: 0;
+}
+
+#panelphoto > iframe {
+	border: none;
+}
+		
+.header-title {
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 20px;
+	color: black;
+}
+.header-value {
+	font-size: 36px;
+	text-align: center;
+	margin-bottom: 20px;
+	color: black;
+}
+.header-description {
+	font-size: 15px;
+	text-align: left;
+	color: #222;
+}
+
+.header-help {
+	font-size: 15px;
+	text-align: left;
+	color: black;
+}
+
+.sidewalk-noone, .accessibility-no, .noise-red {
+	background: rgba(176,26,26,0.8);
+}
+.sidewalk-alone {
+	background: rgba(237,122,23,0.8);
+}
+.sidewalk-two, .accessibility-limited, .noise-orange {
+	background: rgba(246,197,42,0.8);
+}
+.sidewalk-three, .accessibility-yes, .noise-green {
+	background: rgba(125,214,135,0.8);
+}
+.sidewalk-four, .noise-blue {
+	background: rgba(96,164,178,0.8);
+}
+.sidewalk-unknown, .accessibility-unknown {
+	background: rgba(200,200,200,0.8);
+}
+.sidewalk-unknown > .header-value,
+.accessibility-unknown > .header-value,
+.sidewalk-construction > .header-value   {
+	font-size: 24px;
+}
+
+.sidewalk-construction {
+	background: rgba(50,50,50,1);
+}
+
+.sidewalk-construction > .header-title,
+.sidewalk-construction > .header-value,
+.sidewalk-construction > .header-description,
+.sidewalk-construction > .header-help {
+	color: white;
+}
+
+#black-screen, #black-screen-disqus {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 19191919;
+	background: rgba(0,0,0,0.8);
+}
+
+#welcome-screen, #disqus-screen {
+	padding: 20px;
+	display: none;
+	position: absolute;
+	left: 50%;
+	top: 20px;
+	width: 80%;
+	max-height: 85%;
+	overflow-x: auto;
+	margin-left: -40%;
+	z-index: 191919199;
+	background: #fff;
+	box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.2);
+}
+
+#welcome-first-row { }
+
+#welcome-close, #disqus-close {
+	display: block;
+	float: right;
+	width: 26px;
+	height: 26px;
+	cursor: pointer;
+	background: url('img/close-btn.svg') center center no-repeat;
+}
+
+#urbica-logo {
+	position: absolute;
+	bottom: 0px;
+	left: 10px;
+	z-index: 9999;
+	opacity: 0.75;
+}
+
+#urbica-logo:hover {
+	opacity: 1;
+}

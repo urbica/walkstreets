@@ -1,0 +1,466 @@
+{
+  "amenity-wheelchair-": {
+    "x": 102,
+    "y": 0,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "amenity-wheelchair-limited": {
+    "x": 68,
+    "y": 168,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "amenity-wheelchair-no": {
+    "x": 102,
+    "y": 34,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "amenity-wheelchair-yes": {
+    "x": 0,
+    "y": 168,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "micro-amenity": {
+    "x": 230,
+    "y": 0,
+    "width": 16,
+    "height": 18,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "micro-shop": {
+    "x": 198,
+    "y": 202,
+    "width": 16,
+    "height": 18,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "micro-tourism": {
+    "x": 84,
+    "y": 58,
+    "width": 16,
+    "height": 18,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "micro-wheelchair-": {
+    "x": 230,
+    "y": 48,
+    "width": 12,
+    "height": 12,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "micro-wheelchair-limited": {
+    "x": 230,
+    "y": 34,
+    "width": 12,
+    "height": 12,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "micro-wheelchair-no": {
+    "x": 230,
+    "y": 20,
+    "width": 12,
+    "height": 12,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "micro-wheelchair-yes": {
+    "x": 230,
+    "y": 62,
+    "width": 12,
+    "height": 12,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-amenity-wheelchair-": {
+    "x": 132,
+    "y": 202,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-amenity-wheelchair-limited": {
+    "x": 110,
+    "y": 202,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-amenity-wheelchair-no": {
+    "x": 88,
+    "y": 202,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-amenity-wheelchair-yes": {
+    "x": 66,
+    "y": 202,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-noise-blue": {
+    "x": 154,
+    "y": 168,
+    "width": 24,
+    "height": 24,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-noise-green": {
+    "x": 128,
+    "y": 168,
+    "width": 24,
+    "height": 24,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-noise-orange": {
+    "x": 136,
+    "y": 102,
+    "width": 24,
+    "height": 24,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-noise-red": {
+    "x": 102,
+    "y": 168,
+    "width": 24,
+    "height": 24,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-shop-wheelchair-": {
+    "x": 204,
+    "y": 180,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-shop-wheelchair-limited": {
+    "x": 204,
+    "y": 158,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-shop-wheelchair-no": {
+    "x": 204,
+    "y": 136,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-shop-wheelchair-yes": {
+    "x": 204,
+    "y": 92,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-tourism-wheelchair-": {
+    "x": 154,
+    "y": 202,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-tourism-wheelchair-limited": {
+    "x": 22,
+    "y": 202,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-tourism-wheelchair-no": {
+    "x": 204,
+    "y": 26,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-tourism-wheelchair-yes": {
+    "x": 0,
+    "y": 202,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-wheelchair-": {
+    "x": 204,
+    "y": 114,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-wheelchair-limited": {
+    "x": 180,
+    "y": 168,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-wheelchair-no": {
+    "x": 176,
+    "y": 202,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-wheelchair-yes": {
+    "x": 44,
+    "y": 202,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-wikipedia-rank-1": {
+    "x": 0,
+    "y": 58,
+    "width": 40,
+    "height": 40,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-wikipedia-rank-2": {
+    "x": 102,
+    "y": 68,
+    "width": 24,
+    "height": 24,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-wikipedia-rank-3": {
+    "x": 230,
+    "y": 76,
+    "width": 12,
+    "height": 12,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-wikipedia": {
+    "x": 204,
+    "y": 70,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mosmetro-big": {
+    "x": 42,
+    "y": 58,
+    "width": 40,
+    "height": 34,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mosmetro": {
+    "x": 170,
+    "y": 136,
+    "width": 32,
+    "height": 24,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "noise-blue": {
+    "x": 170,
+    "y": 102,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "noise-green": {
+    "x": 170,
+    "y": 68,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "noise-orange": {
+    "x": 170,
+    "y": 34,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "noise-red": {
+    "x": 170,
+    "y": 0,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "shop-wheelchair-": {
+    "x": 136,
+    "y": 134,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "shop-wheelchair-limited": {
+    "x": 102,
+    "y": 134,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "shop-wheelchair-no": {
+    "x": 68,
+    "y": 134,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "shop-wheelchair-yes": {
+    "x": 34,
+    "y": 134,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "tourism-wheelchair-": {
+    "x": 0,
+    "y": 134,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "tourism-wheelchair-limited": {
+    "x": 136,
+    "y": 68,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "tourism-wheelchair-no": {
+    "x": 136,
+    "y": 34,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "tourism-wheelchair-yes": {
+    "x": 136,
+    "y": 0,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "wheelchair-": {
+    "x": 102,
+    "y": 100,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "wheelchair-limited": {
+    "x": 68,
+    "y": 100,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "wheelchair-no": {
+    "x": 34,
+    "y": 100,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "wheelchair-yes": {
+    "x": 0,
+    "y": 100,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "wikipedia copy": {
+    "x": 204,
+    "y": 0,
+    "width": 24,
+    "height": 24,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "wikipedia-rank-1": {
+    "x": 0,
+    "y": 0,
+    "width": 56,
+    "height": 56,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "wikipedia-rank-2": {
+    "x": 58,
+    "y": 0,
+    "width": 42,
+    "height": 40,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "wikipedia-rank-3": {
+    "x": 204,
+    "y": 48,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "wikipedia": {
+    "x": 34,
+    "y": 168,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  }
+}
