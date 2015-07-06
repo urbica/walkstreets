@@ -3,6 +3,7 @@
   "name": "Basic",
   "constants": {
     "@name": "{name}",
+    "@name_w": "{name}",
     "@sans": "Open Sans Regular, Arial Unicode MS Regular",
     "@sans_md": "Open Sans Semibold, Arial Unicode MS Bold",
     "@sans_bd": "Open Sans Bold, Arial Unicode MS Bold",
@@ -685,7 +686,7 @@
     "source-layer": "osm_wheelchair_way",
     "filter": ["all", ["==", "building", "yes"], ["!=", "wheelchair", ""], ["==", "$type", "Polygon"]],
     "layout": {
-      "text-field": "{name}",
+      "text-field": "@name_w",
       "text-font": "Open Sans Bold",
       "text-padding": 5,
       "text-letter-spacing": 0.05,
@@ -735,7 +736,7 @@
           ]
         },
       "icon-allow-overlap": true,
-      "text-field": "{name}",
+      "text-field": "@name_w",
       "text-font": "Open Sans Bold",
       "text-padding": 5,
       "text-letter-spacing": 0.05,
@@ -788,7 +789,7 @@
           ]
         },
       "icon-allow-overlap": true,
-      "text-field": "{name}",
+      "text-field": "@name_w",
       "text-font": "Open Sans Bold",
       "text-padding": 10,
       "text-letter-spacing": 0.05,
@@ -837,7 +838,7 @@
           ]
         },
       "icon-allow-overlap": true,
-      "text-field": "{name}",
+      "text-field": "@name_w",
       "text-font": "Open Sans Bold",
       "text-padding": 20,
       "text-letter-spacing": 0.05,

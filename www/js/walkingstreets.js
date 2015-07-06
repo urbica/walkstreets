@@ -5,7 +5,8 @@ var l = "en", // default language
 
 var lang = {
 	m: { ru: "м", en: "m"}, 
-	db: { ru: "дБ", en: "dB"}, 
+	db: { ru: "дБ", en: "dB"},
+	lang: { ru: "English", en: "По-русски" },
 	footway: { ru: "Тротуар, дорожка", en: "Sidewalk, path" },
 	path: { ru: "Пешеходная дорожка", en: "Path"}, 
 	pedestrian: { ru: "Пешеходная улица", en: "Pedestrian street"},
@@ -77,23 +78,23 @@ var layer_modes = {
 var sidewalksDescriptions = {
 	noone: { 
 		ru: "Вы с большим трудом протиснетесь на этой дорожке, она очень узкая, не разойтись.",
-		en: "Вы с большим трудом протиснетесь на этой дорожке, она очень узкая"
+		en: "This path is too narrow, there is not good to walk."
 	},
 	alone: { 
 		ru: "На этой дорожке можно пройти одному, но если вы гуляете с компанией, придётся гулять гуськом.",
-		en: "На этой дорожке можно пройти одному, но если вы гуляете с компанией, придётся гулять гуськом."
+		en: "You can here alone, (встречные!!) pedestrians. TBD"
 	},
 	two: { 
 		ru: "Вполне удобно прогуливаться вдвоём, троим будет немного тесно.",
-		en: "Вполне удобно прогуливаться вдвоём, троим будет немного тесно."
+		en: "If you walking in two persons here is comfortable."
 	},
 	three: { 
 		ru: "Компании из трёх человек будет удобно гулять и общаться на этой дорожке.",
-		en: "Компании из трёх человек будет удобно гулять и общаться на этой дорожке."
+		en: "This is good path to walk, quite wide and comfortable."
 	},
 	four: { 
 		ru: "Дорожка широкая и удобная даже для компании из четырёх человек, легко разойтись с встречными пешеходами.",
-		en: "Дорожка широкая и удобная даже для компании из четырёх человек, легко разойтись с встречными пешеходами."
+		en: "This path wide and comfortable. You can walk with four and more people."
 	}
 },
 
@@ -179,6 +180,9 @@ var Requests = {
     }
 };
 
+var shareFacebookLink = "http://www.facebook.com/share.php?u=http://walkstreets.org/",
+	shareTwitterLink = "https://twitter.com/intent/tweet?text=Interactive study about pedestrian conditions in Moscow by @urbicadesign http://walkstreets.org/";
+
 //getting language from URL hash param 
 if(Requests.QueryString("l")) {
 	if(Requests.QueryString("l") == "ru") l = "ru";
@@ -237,6 +241,9 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		blackScreenDisqus.style({display: "none" });
 	});
 
+	//setting the proper welcome screen visible
+	d3.select("#welcome-about-"+l).style({ display: "block"});
+
 	//build modes menu
 	modes.forEach(function(mode, i) {
 		modesPanel
@@ -255,6 +262,12 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		duration: 600, // 
 		delay: 0
 	};
+	
+//	in case of English making map in English
+	if(l=="en") {
+		style.constants["@name"] = "{name_en}";
+		//style.constants["@name_w"] = "{name:en}";
+	}
 
 	var map = new mapboxgl.Map({
 		container: 'map',
@@ -267,9 +280,33 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 	
 	
 	function setState() {
-		var ll = map.getCenter();
-		location.hash = "#" + "l=" + l + "&lat=" + ll.lat + "&lng=" + ll.lng + "&z=" + map.getZoom();
-		if(cm != "none") location.hash += "&mode=" + cm;
+		var ll = map.getCenter(),
+			z = map.getZoom();
+			
+		//setting hash
+		location.hash = buildHash(l,ll.lat,ll.lng,z);
+		
+		d3.select("#head-lang").text(lang.lang[l])
+		.on('click', function() {
+			if(l=="en") {
+				location.hash = buildHash("ru",ll.lat,ll.lng,z);
+				window.location.reload();
+			} else {
+				location.hash = buildHash("en",ll.lat,ll.lng,z);
+				window.location.reload();
+			}
+		});
+		
+		d3.select("#share-facebook-link").attr("href", shareFacebookLink + location.hash);
+		d3.select("#share-twitter-link").attr("href", "sss" + location.hash);
+		
+	}
+	
+	function buildHash(l,lat,lng,z) {
+		var hsh;
+		hsh = "#" + "l=" + l + "&lat=" + lat + "&lng=" + lng + "&z=" + z;
+		if(cm != "none") hsh += "&mode=" + cm;
+		return hsh; 
 	}
 	
 	function getProperFeature(features) {
@@ -340,8 +377,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 	
 	function getPanel(feature, latLng) {
 
-		console.log(feature);
-		
+
 		//clear sidepanel
 		sidePanel.text("");
 		
@@ -510,7 +546,6 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 				
 				if(mapillary.length > 0) {
 					photoblock.text("");
-					//console.log(mapillary);
 				}
 				
 				

@@ -67,21 +67,28 @@ a:hover {
 	padding-left: 35px;
 }
 
-#head-disqus, #head-share, #head-about {
+#head-disqus, #head-about, #head-lang {
 	display: inline-block;
 	margin: 0 20px;
 	line-height: 60px;
 	cursor: pointer;
 }
 
-#share-like {
+#head-share {
 	display: inline-block;
-	line-height: 60px;
+	margin: 10px 20px;
+	line-height: 40px;
+	cursor: pointer;
 }
 
-#share-like > span {
+.share-icon {
+	display: inline-block;
 	margin-left: 10px;
-	line-height: 60px;
+}
+
+.disqus-comment-count {
+	color: #aaa;
+	padding-left: 5px;
 }
 
 .mode-inactive {
@@ -216,6 +223,10 @@ a:hover {
 	z-index: 191919199;
 	background: #fff;
 	box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.2);
+}
+
+#welcome-about-ru, #welcome-about-en {
+	display: none;
 }
 
 #welcome-first-row { }

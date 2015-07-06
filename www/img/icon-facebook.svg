@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<svg width="22px" height="28px" viewBox="0 0 22 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
     <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
     <title>icon-facebook</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <path d="M8.04630605,21 L12.3502478,21 L12.3502478,11.006 L15.2529222,11.006 L15.6279287,7.476 L12.3502478,7.476 L12.3502478,5.39933333 C12.3502478,4.62066667 12.8847874,4.43866667 13.2625563,4.43866667 L15.5754416,4.43866667 L15.5754416,1.01133333 L12.3896131,1 C8.85156857,1 8.04630605,3.556 8.04630605,5.19133333 L8.04630605,7.476 L6,7.476 L6,11.006 L8.04630605,11.006 L8.04630605,21" id="Fill-5" fill="#444444" sketch:type="MSShapeGroup"></path>
+        <path d="M8.04630605,28 L12.3502478,28 L12.3502478,18.006 L15.2529222,18.006 L15.6279287,14.476 L12.3502478,14.476 L12.3502478,12.3993333 C12.3502478,11.6206667 12.8847874,11.4386667 13.2625563,11.4386667 L15.5754416,11.4386667 L15.5754416,8.01133333 L12.3896131,8 C8.85156857,8 8.04630605,10.556 8.04630605,12.1913333 L8.04630605,14.476 L6,14.476 L6,18.006 L8.04630605,18.006 L8.04630605,28" id="Fill-5" fill="#444444" sketch:type="MSShapeGroup"></path>
     </g>
 </svg>
