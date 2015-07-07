@@ -20,8 +20,8 @@
 	<div id='head-right'>
 		<div id='head-about'>About</div>
 		<div id='head-disqus'>
-			<span>Discuss<span>
-			<span class="disqus-comment-count" data-disqus-identifier="walkstreets">&nbsp;</span>
+			<div id="head-disqus-text">Discuss</div>
+			<div id="head-disqus-count"><span class="disqus-comment-count" data-disqus-identifier="walkstreets">&nbsp;</span></div>
 		</div>
 		<div id='head-lang'></div>
 		<div id='head-share'>
@@ -30,6 +30,9 @@
 			</div>	
 	</div>
 	<div id='head-logo'>Walking Streets</div>
+</div>
+<div id='layersBtn'>
+	<img src="img/icon-layers.svg" border="0" width="40" height="40" />
 </div>
 <div id='modesPanel'>
 </div>
@@ -53,7 +56,7 @@
 <div id='black-screen'></div>
 <div id='black-screen-disqus'></div>
 <div id='welcome-screen'>
-	<div><div id="welcome-close"></div></div>
+	<div id="welcome-header"><div id="welcome-close"></div><div id="welcome-header-text">Hi!</div></div>
 	<div id='welcome-about-ru'><p>«Улицы прогулок» — интерактивный проект про исследование городской среды для пешеходов в небольшом районе в центре москвы. Цель проекта: исследовать и проанализоровать параметры, которые влияют на комфортное перемещение пешком в городе и рассказать о ситуации в выбранном для исследования районе.</p>
 
 <ul>Проект рассказывает четыре истории: 
@@ -70,8 +73,8 @@
 		<p>Создание проекта: <a href="http://urbica.co">Urbica Design</a></p>
 		</div>
 
-<div id='welcome-about-en'><p> “Walking Streets” independent study of the pedestrian conditions research in the Moscow, an interactive map tells four stories about pedestrian facilities research: sidewalks, venues accessibility, street noise, interesting places. This is early prototype of big idea to improve the city conditions for pedestrians. Starting from data collection and analysis. Hope to receive any feedback about the project.</p>
-<p>Read full story about the project on Medium: «<a href="https://medium.com/@iamkarma/b86ef755237f">Good Walk</a>»</p>
+<div id='welcome-about-en'><p> Presenting “Walking Streets” independent study of pedestrian conditions research in Moscow, an interactive map tells four stories of pedestrian facilities research. This is an early prototype of one way to improve city conditions. Starting from data collection and analysis. We hope to receive some feedback about the project.</p>
+<p>Read full story about the project on Medium: «<a href="https://medium.com/@iamkarma/b86ef755237f">A Good Walk</a>»</p>
 <p>Team: <a href="http://facebook.com/karmatsky/">Andrey Karmatsky</a>, <a href="http://facebook.com/philipp.katz">Filipp Katz</a>, <a href="http://facebook.com/igor.gakov">Igor Gakov</a><br/>
 Special thanks to <a href="http://facebook.com/ilya.zverev">Ilya Zverev</a> and <a href="http://facebook.com/timofey.stepanov">Timofey Stepanov</a></p>
 	<p>Created by <a href="http://urbica.co">Urbica Design</a></p>
@@ -130,7 +133,11 @@ Special thanks to <a href="http://facebook.com/ilya.zverev">Ilya Zverev</a> and 
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-64810184-1', 'auto');
   ga('send', 'pageview');
-
 </script>
+<div id="#notsupported-blackscreen"></div>
+<div id='notsupported-screen'>
+	<div id="notsupported-en"><p>Sorry! The project is not available in your browser (WebGL is not supported here) :(</p><p> Please, try it in another browser or read the story at Medium: «<a href="https://medium.com/@Urbica.co/4189a331348c">A good walk</a>».</p></div>
+	<div id="notsupported-ru"><p>Печально, но кажется, что ваш браузер не поддерживает WebGL :(</p><p>Попробуйте воспользоваться другим браузером или почитайте описание проекта на Medium: «<a href="http://">Комфортная прогулка</a>»</div>
+</div>
 </body>
 </html>

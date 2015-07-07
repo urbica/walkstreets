@@ -4,9 +4,12 @@ var l = "en", // default language
 	cm = "none"; //default mode
 
 var lang = {
+	logo: { ru: "Улицы прогулок", en: "Walking Streets" },
 	m: { ru: "м", en: "m"}, 
 	db: { ru: "дБ", en: "dB"},
 	lang: { ru: "English", en: "По-русски" },
+	about: { ru: "О проекте", en: "About" },
+	disqus: { ru: "Обсуждение", en: "Discus" },
 	footway: { ru: "Тротуар, дорожка", en: "Sidewalk, path" },
 	path: { ru: "Пешеходная дорожка", en: "Path"}, 
 	pedestrian: { ru: "Пешеходная улица", en: "Pedestrian street"},
@@ -46,6 +49,13 @@ var modes = [{
 	ru: "Популярные места",
 	en: "Popular places"
 }];
+
+var pageTitles = {
+	sidewalks: { ru: "Тротуары", en: "Sidewalks map" },
+	accessibility: { ru: "Доступность среды", en: "Accessibility map" },
+	noise: { ru: "Шум на улице", en: "Noise map" },
+	places: { ru: "Интересные места", en: "Interesting places" }
+};
 
 var layer_modes = {
 	sidewalks_nodata: { mode: "sidewalks", layout: "sidewalks" },
@@ -200,13 +210,13 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 	//statements
 	var mapArea = d3.select("#map"),
 		modesPanel = d3.select("#modesPanel"),
+		layersBtn = d3.select("#layersBtn"),
 		sidePanel = d3.select("#sidepanel"),
 		tooltip = d3.select("#tooltip"),
 		welcomeScreen = d3.select("#welcome-screen"),
 		blackScreen = d3.select("#black-screen"),
 		blackScreenDisqus = d3.select("#black-screen-disqus"),
 		disqusScreen = d3.select("#disqus-screen");
-	
 	
 	
 	//setting controls
@@ -243,6 +253,36 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 
 	//setting the proper welcome screen visible
 	d3.select("#welcome-about-"+l).style({ display: "block"});
+	if(l == "ru") d3.select("#welcome-about-en").text("");
+	if(l == "en") d3.select("#welcome-about-ru").text("");
+	
+	//setting the proper title for logo
+	d3.select("#head-logo").text(lang.logo[l]);
+
+	//setting proper lang title 
+	d3.select("#head-lang").text(lang.lang[l]);
+	
+	//setting proper about link
+	d3.select("#head-about").text(lang.about[l]); 
+
+	//setting proper disqus link
+	d3.select("#head-disqus-text").text(lang.disqus[l]); 
+	
+	
+	if( window.innerWidth <= 750) {
+		modesPanel.on('click', function() {
+			modesPanel.style({display: "none"});
+			if(layersBtn.style("display") == "none") {
+				layersBtn.style({display: "block"});
+			}
+		});
+	
+		layersBtn.on('click', function() {
+			layersBtn.style({display: "none"});
+			modesPanel.style({display: "block"});
+		});
+			
+	}
 
 	//build modes menu
 	modes.forEach(function(mode, i) {
@@ -268,6 +308,15 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		style.constants["@name"] = "{name_en}";
 		//style.constants["@name_w"] = "{name:en}";
 	}
+	
+
+	//check for Mapbox WebGL support
+	if(!mapboxgl.supported()) {
+		d3.select("#notsupported-blackscreen").style({display: "block"});
+		d3.select("#notsupported-screen").style({display: "block"});
+		d3.select("#notsupported-"+l).style({display: "block"});
+	}
+
 
 	var map = new mapboxgl.Map({
 		container: 'map',
@@ -277,7 +326,6 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		minZoom: 13,
 		maxZoom: 20
 	});
-	
 	
 	function setState() {
 		var ll = map.getCenter(),
@@ -373,7 +421,10 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 	//getting mode from URL hash param
 	if(Requests.QueryString("mode")) {
 		changeMode(Requests.QueryString("mode"));
+	} else {
+		document.title = lang.logo[l];
 	}
+	
 	
 	function getPanel(feature, latLng) {
 
@@ -414,7 +465,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 				value = '';
 			}
 			
-			//getPhoto("mapillary", photo, latLng);
+			getPhoto("mapillary", photo, latLng);
 		}
 		
 		if(layer_modes[feature.layer.id].layout=="sidewalks_construction") {
@@ -449,7 +500,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 			if(feature.layer.id == "accessibility_tourism") { category = props.tourism; }
 			if(feature.layer.id == "accessibility_shops") { category = props.shop; }
 
-			//getPhoto("mapillary", photo, latLng);
+			getPhoto("mapillary", photo, latLng);
 		}
 		
 		if(layer_modes[feature.layer.id].layout=="steps") {
@@ -496,7 +547,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		if(layer_modes[feature.layer.id].layout=="places") {
 			value = props.name;
 			
-			//getPhoto("panoramio", photo, latLng);
+			getPhoto("panoramio", photo, latLng);
 		}		
 		
 		//rendering title
@@ -504,8 +555,8 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 			.attr("class", "header-title")
 			.text(title);
 
+		//rendering category
 		if(category) {
-		//rendering title
 		header.append('div')
 			.attr("class", "header-category")
 			.text(category);
@@ -602,6 +653,13 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		} else {
 			map.removeClass(cm);
 			cm = "none"; //setting current mode	
+		}
+		
+		//setting the proper page title
+		if(cm != "none") {
+			document.title = lang.logo[l] + " — " + pageTitles[cm][l];
+		} else {
+			document.title = lang.logo[l];
 		}
 		
 		//setting URL params after mode changed

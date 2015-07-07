@@ -21,6 +21,24 @@ a:hover {
 	bottom: 0;
 	width: 100%;
 }
+
+#layersBtn {
+	position: absolute;
+	display: none;
+	top: 50px;
+	left: 10px;
+	width: 40px;
+	height: 40px;
+	z-index: 9999;
+	box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.2);
+	background: #fff; 
+	cursor: pointer;
+}
+
+#layersBtn > img {
+	display: block;
+}
+
 #modesPanel {
 	position: absolute;
 	top: 70px;
@@ -34,6 +52,7 @@ a:hover {
 	background: #fff;
 	padding: 10px;
 }
+
 #tooltip {
 	position: absolute;
 	z-index: 999999;
@@ -49,6 +68,7 @@ a:hover {
 	left: 0;
 	width: 100%;
 	height: 60px;
+	line-height: 60px;
 	z-index: 99999;
 	background: rgba(255,255,255,0.9);
 	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.05);
@@ -61,16 +81,18 @@ a:hover {
 
 #head-logo {
 	font-size: 32px;
-	line-height: 60px;
 	margin-left: 20px;
 	background: url('img/walking-man.svg') no-repeat 0px;
 	padding-left: 35px;
 }
 
+#head-disqus-text, #head-disqus-count {
+	display: inline-block;
+}
+
 #head-disqus, #head-about, #head-lang {
 	display: inline-block;
 	margin: 0 20px;
-	line-height: 60px;
 	cursor: pointer;
 }
 
@@ -84,6 +106,10 @@ a:hover {
 .share-icon {
 	display: inline-block;
 	margin-left: 10px;
+}
+
+#disqus_thread {
+	padding: 20px;
 }
 
 .disqus-comment-count {
@@ -116,7 +142,6 @@ a:hover {
 #sidepanel {
 	position: absolute;
 	display: none;
-	top: 70px;
 	right: 10px;
 	width: 320px;
 	overflow: auto;
@@ -132,31 +157,39 @@ a:hover {
 #panelphoto {
 	padding: 0;
 	text-align: center;
+	display: block
 }
 		
 #panelphoto > img {
 	margin: 0;
+	display: block;
 }
 
 #panelphoto > iframe {
 	border: none;
+	display: block;
 }
 		
 .header-title {
 	font-size: 24px;
 	text-align: center;
-	margin-bottom: 20px;
 	color: black;
 }
+
 .header-value {
 	font-size: 36px;
 	text-align: center;
-	margin-bottom: 20px;
+	margin: 20px 0px;
 	color: black;
 }
 .header-description {
 	font-size: 15px;
 	text-align: left;
+	color: #222;
+}
+
+.header-category {
+	text-align: center;
 	color: #222;
 }
 
@@ -187,7 +220,7 @@ a:hover {
 .sidewalk-unknown > .header-value,
 .accessibility-unknown > .header-value,
 .sidewalk-construction > .header-value   {
-	font-size: 24px;
+	
 }
 
 .sidewalk-construction {
@@ -201,7 +234,7 @@ a:hover {
 	color: white;
 }
 
-#black-screen, #black-screen-disqus {
+#black-screen, #black-screen-disqus, #notsupported-blackscreen {
 	display: none;
 	position: absolute;
 	width: 100%;
@@ -210,26 +243,39 @@ a:hover {
 	background: rgba(0,0,0,0.8);
 }
 
-#welcome-screen, #disqus-screen {
-	padding: 20px;
+#welcome-screen, #disqus-screen, #notsupported-screen {
 	display: none;
 	position: absolute;
 	left: 50%;
 	top: 20px;
 	width: 80%;
 	max-height: 85%;
-	overflow-x: auto;
+	overflow: auto;
 	margin-left: -40%;
 	z-index: 191919199;
 	background: #fff;
 	box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.2);
 }
 
-#welcome-about-ru, #welcome-about-en {
+#notsupported-en, #notsupported-ru {
 	display: none;
+	padding: 20px;
 }
 
-#welcome-first-row { }
+
+#welcome-about-ru, #welcome-about-en {
+	display: none;
+	padding: 20px;
+}
+
+#welcome-header {
+	display: block;
+	padding: 20px 20px 0px;
+}
+
+#welcome-header-text {
+	font-size: 32px;
+}
 
 #welcome-close, #disqus-close {
 	display: block;
@@ -250,4 +296,73 @@ a:hover {
 
 #urbica-logo:hover {
 	opacity: 1;
+}
+
+@media only screen and (min-width: 750px) {
+	#sidepanel {
+		top: 70px;
+	}
+}
+
+@media only screen and (max-width: 750px) {
+	#modesPanel {
+		display: none;
+		top: 50px;
+	}
+	
+	#layersBtn {
+		display: block;
+	}
+	
+	#welcome-screen,  #disqus-screen, #notsupported-screen {
+		display: none;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		max-height: 100%;
+		overflow: auto;
+		margin-left: 0;
+		z-index: 191919199;
+		background: #fff;
+	}
+	
+	
+	#panelphoto {
+		display: none;
+	}
+	
+	#sidepanel {
+		left: 0;
+		bottom: 0;
+		width: 100%;
+	}
+	
+	#head {
+		height: 40px;
+		
+	}
+	
+	#head-logo {
+		font-size: 0px;
+		line-height: 40px;
+		padding: 0px;
+		margin-left: 10px;
+		background: url('img/walking-man-mini.svg') 0px center  no-repeat;
+	}
+	
+	#head-right {
+		margin-right: 0px;
+		line-height: 40px;
+	}
+	#head-disqus, #head-share {
+		display: none;
+	}
+	
+	#head-about, #head-lang {
+		line-height: 40px;
+		margin: 0px 10px;
+		
+	}
 }
