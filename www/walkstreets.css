@@ -180,6 +180,11 @@ a:hover {
 	display: block;
 }
 
+#panelphoto div img {
+	margin: 0;
+	display: block;
+}
+
 #panelphoto > iframe {
 	border: none;
 	display: block;

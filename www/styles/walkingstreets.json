@@ -9,7 +9,7 @@
     "@sans_bd": "Open Sans Bold, Arial Unicode MS Bold",
     "@land": "#ebe8e0",
     "@water": "#aed4da",
-    "@park": "#d3e2c0",
+    "@park": "#CED6BF",
     "@building": "#c6c1b4",
     "@label": "#666",
     "@label-halo": "rgba(255,255,255,0.75)",
@@ -24,11 +24,11 @@
       "stops": [[4, 0.25], [20, 30]]
     },
     "@sidewalks_nodata": "#c0c0c0",
-    "@sidewalks_noone": "#B01A1A",
-    "@sidewalks_alone": "#ED7A17",
-    "@sidewalks_two": "#F6C52A",
-    "@sidewalks_three": "#7DD687",
-    "@sidewalks_four": "#60A4B2",
+    "@sidewalks_noone": "#990C0C",
+    "@sidewalks_alone": "#DB7014",
+    "@sidewalks_two": "#F9B90D",
+    "@sidewalks_three": "#9DCD84",
+    "@sidewalks_four": "#60BAB2",
 	"@sidewalks_construction": "#333333",
 	"@fill_wheelchair_yes": "#7DD687",
 	"@fill_wheelchair_no": "#B01A1A",
@@ -46,19 +46,19 @@
           "stops": [[12, 0.3], [20, 20]]
      },
 	 "@sidewalks_width_noone": {
-          "base": 1.6,
+          "base": 1.4,
           "stops": [[12, 0.3], [20, 20]]
      },
 	 "@sidewalks_width_alone": {
-          "base": 1.45,
-          "stops": [[12, 0.3], [20, 20]]
-     },
-	 "@sidewalks_width_two": {
           "base": 1.3,
           "stops": [[12, 0.3], [20, 20]]
      },
+	 "@sidewalks_width_two": {
+          "base": 1.2,
+          "stops": [[12, 0.3], [20, 20]]
+     },
 	 "@sidewalks_width_three": {
-          "base": 1.15,
+          "base": 1.1,
           "stops": [[12, 0.3], [20, 20]]
      },
 	 "@sidewalks_width_four": {
