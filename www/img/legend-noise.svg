@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="180px" height="57px" viewBox="0 0 180 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>legend-noise</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <rect id="Rectangle-2-Copy-11" fill="#B11A1A" sketch:type="MSShapeGroup" x="130" y="10" width="40" height="20"></rect>
+        <rect id="Rectangle-2-Copy-13" fill="#7DD687" sketch:type="MSShapeGroup" x="50" y="10" width="40" height="20"></rect>
+        <rect id="Rectangle-2-Copy-14" fill="#60A4B2" sketch:type="MSShapeGroup" x="10" y="10" width="40" height="20"></rect>
+        <text id="80" sketch:type="MSTextLayer" font-family="Arial" font-size="11" font-weight="normal" sketch:alignment="middle" fill="#444444">
+            <tspan x="124.06578" y="45.6150807">80</tspan>
+        </text>
+        <rect id="Rectangle-2-Copy-15" fill="#F6C52A" sketch:type="MSShapeGroup" x="90" y="10" width="40" height="20"></rect>
+        <text id="70" sketch:type="MSTextLayer" font-family="Arial" font-size="11" font-weight="normal" sketch:alignment="middle" fill="#444444">
+            <tspan x="84.0657798" y="45.6150807">70</tspan>
+        </text>
+        <path d="M50.5,10.5 L50.5,32.4999998" id="Line-Copy-6" stroke="#333333" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M90.5,10.5 L90.5,32.4999998" id="Line-Copy-13" stroke="#333333" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M130.5,10.5 L130.5,32.4999998" id="Line-Copy-14" stroke="#333333" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <text id="60" sketch:type="MSTextLayer" font-family="Arial" font-size="11" font-weight="normal" sketch:alignment="middle" fill="#444444">
+            <tspan x="44.0657798" y="45.6150807">60</tspan>
+        </text>
+        <text id="dB" sketch:type="MSTextLayer" font-family="Arial" font-size="11" font-weight="normal" sketch:alignment="middle" fill="#444444">
+            <tspan x="9.88560376" y="45.6150807">dB</tspan>
+        </text>
+    </g>
+</svg>

@@ -43,13 +43,28 @@ a:hover {
 	position: absolute;
 	top: 70px;
 	left: 10px;
-	width: 200px;
+	width: 220px;
+	background: rgba(255,255,255,1);
 	z-index: 9999;
 	box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.2);
 }
+
+
+#legend {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 220px;
+	z-index: 9999;
+}
+
+#legend-sidewalks, #legend-accessibility, #legend-noise {
+	display: none;
+}
+
 #modesPanel .div {
 	margin: 1px;
-	background: #fff;
+	background: none;
 	padding: 10px;
 }
 
@@ -118,7 +133,7 @@ a:hover {
 }
 
 .mode-inactive {
-	background: #fff;
+	background: none;
 	padding: 10px 20px;
 	cursor: pointer;
 }
@@ -160,7 +175,7 @@ a:hover {
 	display: block
 }
 		
-#panelphoto > img {
+#panelphoto img {
 	margin: 0;
 	display: block;
 }
@@ -287,6 +302,7 @@ a:hover {
 }
 
 #urbica-logo {
+	display: none;
 	position: absolute;
 	bottom: 0px;
 	left: 10px;

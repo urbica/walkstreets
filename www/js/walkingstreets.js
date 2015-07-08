@@ -78,6 +78,10 @@ var layer_modes = {
 	cutting: { mode: "accessibility", layout: "cutting" },
 	noise: { mode: "noise", layout: "noise" },
 	noise_labels: { mode: "noise", layout: "noise" },
+	noisemap_blue: { mode: "noise", layout: "noise_streets" },
+	noisemap_green: { mode: "noise", layout: "noise_streets" },
+	noisemap_orange: { mode: "noise", layout: "noise_streets" },
+	noisemap_red: { mode: "noise", layout: "noise_streets" },
 	wikipedia: { mode: "places", layout: "places" },
 	wikipedia_labels: { mode: "places", layout: "places" },
 	wikipedia_mini: { mode: "places", layout: "places" }
@@ -346,7 +350,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		});
 		
 		d3.select("#share-facebook-link").attr("href", shareFacebookLink + location.hash);
-		d3.select("#share-twitter-link").attr("href", "sss" + location.hash);
+		d3.select("#share-twitter-link").attr("href", shareTwitterLink + location.hash);
 		
 	}
 	
@@ -364,7 +368,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 				if(layer_modes[f.layer.id].mode == cm) index = i;
 			});
 		} 
-		return index;
+		if(index) return index;
 	}
 	
 	map.on('mousemove', function(e) {
@@ -399,6 +403,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		}, function(err, features) {
 			if (err) throw err;
 			if (features.length > 0) {
+				console.log(features);
 				getPanel(features[getProperFeature(features)],e.latLng);
 				sidePanel.style({
 					display: "block",
@@ -412,6 +417,24 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 			}
 
 		});
+	});
+	
+	
+	//on map load animating modes panel background
+	map.on('load', function(e) {
+		var white = d3.rgb
+		if(cm == "none") {
+			modesPanel
+				.transition()
+				.duration(2000)
+				.styleTween("background", function() { return d3.interpolate("#ffffff", "#ffff90"); })
+					.transition()
+						.duration(1000)
+						.delay(1000)
+						.styleTween("background", function() { return d3.interpolate("#ffff90", "#ffffff"); })
+			;
+		}
+
 	});
 	
 	map.on('moveend', function(e) {
@@ -531,7 +554,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		}
 
 
-
+		//template for noise points
 		if(layer_modes[feature.layer.id].layout=="noise") {
 			title = '';
 			value =  props.level + ' ' + lang.db[l];
@@ -541,6 +564,17 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 			photo.append("div")
 				.append("img")
 				.attr("src", props.image);
+		}
+		
+		//values for noise_streets
+		if(layer_modes[feature.layer.id].layout=="noise_streets") {
+			title = props.name;
+			value =  props.level + ' ' + lang.db[l];
+			description = noiseDescriptions[getNoiseCategory(props.level)][l];
+			header.attr("class", "noise-"+getNoiseCategory(props.level));
+			
+			
+			
 		}
 
 		//processing places data
@@ -642,10 +676,12 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		//switching off menu highlights
 		modes.forEach(function(m, i) {
 			d3.select("#" + m.id).attr("class", "mode-inactive");
+			d3.select("#legend-" + m.id).style({display: "none"});
 		});
 
 		if (mode != cm) {
 			d3.select("#" + mode).attr("class", "mode-active");
+			d3.select("#legend-" + mode).style({display: "block"});
 			if(cm != "none") map.removeClass(cm); //remove style class from previous mode
 			map.addClass(mode); //adding map style class for the selected mode
 			cm = mode; //the layer switching off from the menu
@@ -674,6 +710,15 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		if(w >= 1.2 && w < 1.8) cat = "two";
 		if(w >= 1.8 && w < 2.4) cat = "three";
 		if(w >= 2.4) cat = "four";
+		return cat;
+	}
+	
+	function getNoiseCategory(c) {
+		var cat;
+		if(c < 60) cat = "blue";
+		if(c>=60 && c < 70) cat = "green";
+		if(c>=70 && c < 80) cat = "orange";	
+		if(c>=80) cat = "red";	
 		return cat;
 	}
 
