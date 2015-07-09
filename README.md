@@ -21,4 +21,8 @@ The story in [Russian](https://medium.com/@iamkarma/b86ef755237f)
 
 ###You can contribute
 
-We need to get more data in the center of the city. You can do it on OpenStreetMap. Here is [short guide](https://github.com/urbica/walkstreets/wiki/Contribute-the-project) also — [guide in Russian](https://github.com/urbica/walkstreets/wiki/%D0%9F%D0%BE%D0%BC%D0%BE%D1%89%D1%8C-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%83)
+We need to get more data in the center of the city. You can do it on OpenStreetMap. Here is [short guide](https://github.com/urbica/walkstreets/wiki/Contribute-the-project) also — [guide in Russian](https://github.com/urbica/walkstreets/wiki/%D0%9F%D0%BE%D0%BC%D0%BE%D1%89%D1%8C-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%83) 
+
+###Credits
+The project team: [Andrey Karmatsky](https://github.com/minikarma), [Philipp Katz](https://github.com/Casyfill/), [Igor Gakov](http://facebook.com/igor.gakov)  
+Project created by [Urbica](http://urbica.co/)  
