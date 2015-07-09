@@ -461,7 +461,6 @@
 	  "filter": ["all", ["==", "construction", "yes"], ["in", "highway", "footway", "path", "pedestrian"], ["==", "$type", "LineString"]],
 	  "minzoom": 12,
 	  "layout": {
-		  "visibility": "visible",
 		  "line-cap": "round",
 		  "line-join": "round"
 	  },

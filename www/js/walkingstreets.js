@@ -26,7 +26,10 @@ var lang = {
 	limited: { ru: "Ограничено", en: "limited"},
 	searchingPhotos: { ru: "Ищем фотографии рядом...", en: "Searching nearby photos..."},
 	youCanHelpText: { ru: "Улучшить данные", en: "Improve data"},
-	youCanHelpUrl: { ru: "http://canhelpURLru", en: "http://canhelpURLen"},
+	youCanHelpUrl: { 
+		ru: "https://github.com/urbica/walkstreets/wiki/%D0%9F%D0%BE%D0%BC%D0%BE%D1%89%D1%8C-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%83", 
+		en: "https://github.com/urbica/walkstreets/wiki/Contribute-the-project"
+	},
 	underConstruction: { ru: "На ремонте", en: "Under construction" },
 	underConstructionDescription: { ru: "Эта пешеходная дорожка сейчас на ремонте, планируйте прогулку альтернативным маршрутом.", en: "This path is under construction, extremely uncomfortable walk here, avoid." }
 };
@@ -96,15 +99,15 @@ var sidewalksDescriptions = {
 	},
 	alone: { 
 		ru: "На этой дорожке можно пройти одному, но если вы гуляете с компанией, придётся гулять гуськом.",
-		en: "You can here alone, (встречные!!) pedestrians. TBD"
+		en: "You can walk here alone. It is narrow sidewalk."
 	},
 	two: { 
-		ru: "Вполне удобно прогуливаться вдвоём, троим будет немного тесно.",
-		en: "If you walking in two persons here is comfortable."
+		ru: "Вполне удобно прогуливаться вдвоём, троим же будет немного тесно.",
+		en: "This sidewalk is not sow wide and will be suitable for two."
 	},
 	three: { 
 		ru: "Компании из трёх человек будет удобно гулять и общаться на этой дорожке.",
-		en: "This is good path to walk, quite wide and comfortable."
+		en: "This is good path to walk and will be suitable for three pedestrians."
 	},
 	four: { 
 		ru: "Дорожка широкая и удобная даже для компании из четырёх человек, легко разойтись с встречными пешеходами.",
@@ -115,11 +118,11 @@ var sidewalksDescriptions = {
 accessibilityDescriptions = {
 	no: { 
 		ru: "Заведение не доступно для детских колясок и маломобильных граждан.",
-		en: "Заведение не доступно для детских колясок и маломобильных граждан."
+		en: "This venue is not accessible for wheelchairs and strollers."
 	},
 	yes: { 
 		ru: "Заведение доступно и для детских колясок и для маломобильных граждан.",
-		en: "Заведение доступно и для детских колясок и для маломобильных граждан."
+		en: "This venue is not accessible for wheelchairs and strollers."
 	},
 	limited: { 
 		ru: "Заведение доступно для детских колясок с некоторыми услиями, а для маломобильных граждан это заведение недоступно.",
@@ -195,8 +198,10 @@ var Requests = {
 };
 
 var shareFacebookLink = "http://www.facebook.com/share.php?u=http://walkstreets.org/",
-	shareTwitterLink = "https://twitter.com/intent/tweet?text=Interactive study about pedestrian conditions in Moscow by @urbicadesign http://walkstreets.org/";
-
+shareTwitterLink = {
+ru: "https://twitter.com/intent/tweet?text=Карта пешеходной среды в Москве от @urbicadesign http://walkstreets.org/",
+en: "https://twitter.com/intent/tweet?text=Interactive study about pedestrian conditions in Moscow by @urbicadesign http://walkstreets.org/"
+};
 //getting language from URL hash param 
 if(Requests.QueryString("l")) {
 	if(Requests.QueryString("l") == "ru") l = "ru";
@@ -297,7 +302,6 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 			.text(mode[l])
 			.on('click', function() {
 				changeMode(mode.id);
-				//console.log(mode.id);
 			});
 	});
 
@@ -350,13 +354,13 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		});
 		
 		d3.select("#share-facebook-link").attr("href", shareFacebookLink + location.hash);
-		d3.select("#share-twitter-link").attr("href", shareTwitterLink + location.hash);
+		d3.select("#share-twitter-link").attr("href", shareTwitterLink[l] + location.hash);
 		
 	}
 	
 	function buildHash(l,lat,lng,z) {
 		var hsh;
-		hsh = "#" + "l=" + l + "&lat=" + lat + "&lng=" + lng + "&z=" + z;
+		hsh = "#" + "l=" + l + "&lat=" + lat.toFixed(6) + "&lng=" + lng.toFixed(6) + "&z=" + z.toFixed(2);
 		if(cm != "none") hsh += "&mode=" + cm;
 		return hsh; 
 	}
@@ -364,6 +368,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 	function getProperFeature(features) {
 		var index;
 		if(features.length > 0) {
+			
 			features.forEach(function(f,i){
 				if(layer_modes[f.layer.id].mode == cm) index = i;
 			});
@@ -373,7 +378,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 	
 	map.on('mousemove', function(e) {
 		map.featuresAt(e.point, {
-			radius: 16
+			radius: 10
 		}, function(err, features) {
 			if (err) throw err;
 			if (getProperFeature(features)) {
@@ -385,7 +390,6 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 					left: (e.point.x + 10) + 'px',
 					top: (e.point.y + 10) + 'px'
 				});
-				//.text(getTooltipHint(features[getProperFeature(features)].layer.id, features[getProperFeature(features)].properties));
 			} else {
 				d3.select(".mapboxgl-canvas").style({
 					cursor: "-webkit-grab"
@@ -399,12 +403,13 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 
 	map.on('click', function(e) {	
 		map.featuresAt(e.point, {
-			radius: 8
+			radius: 10
 		}, function(err, features) {
 			if (err) throw err;
-			if (features.length > 0) {
-				console.log(features);
+			if (getProperFeature(features)) {
+
 				getPanel(features[getProperFeature(features)],e.latLng);
+					//getPanel(features[getProperFeature(features)],e.latLng);
 				sidePanel.style({
 					display: "block",
 					'max-height': (window.innerHeight-90) + "px"
@@ -463,17 +468,17 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 			photo = sidePanel.append('div')
 				.attr("id", "panelphoto");
 
-		
+
 		//processing sidewalks data
 		if(layer_modes[feature.layer.id].layout=="sidewalks") {
 			title = lang[props.highway][l];
 			//getting params of the object
-			if(props.width) { 
-				if(props.width < 1.2) 
-					value = '→ ' + props.width + ' ' + lang.m[l] + ' ←';
+			if(props.width_num) { 
+				if(props.width_num < 1.2) 
+					value = '→ ' + props.width_num + ' ' + lang.m[l] + ' ←';
 				else
-					value = '← ' + props.width + ' ' + lang.m[l] + ' →';
-				description = sidewalksDescriptions[getSidewalkCategory(props.width)][l];
+					value = '← ' + props.width_num + ' ' + lang.m[l] + ' →';
+				description = sidewalksDescriptions[getSidewalkCategory(props.width_num)][l];
 				header.attr("class", "sidewalk-"+getSidewalkCategory(props.width));
 			}
 			else {
