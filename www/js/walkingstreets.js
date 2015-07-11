@@ -8,6 +8,7 @@ var lang = {
 	m: { ru: "м", en: "m"}, 
 	db: { ru: "дБ", en: "dB"},
 	lang: { ru: "English", en: "По-русски" },
+	seen: { ru: "Просмотров статьи в июне", en: "Views of article  in Jun 2015"},
 	about: { ru: "О проекте", en: "About" },
 	disqus: { ru: "Обсуждение", en: "Discus" },
 	footway: { ru: "Тротуар, дорожка", en: "Sidewalk, path" },
@@ -378,7 +379,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 	
 	map.on('mousemove', function(e) {
 		map.featuresAt(e.point, {
-			radius: 10
+			radius: 16
 		}, function(err, features) {
 			if (err) throw err;
 			if (getProperFeature(features)) {
@@ -403,7 +404,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 
 	map.on('click', function(e) {	
 		map.featuresAt(e.point, {
-			radius: 10
+			radius: 16
 		}, function(err, features) {
 			if (err) throw err;
 			if (getProperFeature(features)) {
@@ -585,6 +586,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		//processing places data
 		if(layer_modes[feature.layer.id].layout=="places") {
 			value = props.name;
+			description = lang.seen[l] + ": " + props.seen;
 			
 			getPhoto("panoramio", photo, latLng);
 		}		

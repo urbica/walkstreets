@@ -249,6 +249,21 @@
       "line-width": "@road-major-width"
     }
   }, {
+    "id": "cycleway",
+    "type": "line",
+    "source": "mapbox",
+    "source-layer": "road",
+    "filter": ["all", ["==", "class", "path"], ["==", "type", "cycleway"], ["==", "$type", "LineString"]],
+    "layout": {
+      "line-cap": "round",
+      "line-join": "round"
+    },
+    "paint": {
+      "line-opacity": 0,
+      "line-color": "#50CC50",
+      "line-width": 3
+    }
+  }, {
     "id": "bridge_minor_case",
     "type": "line",
     "source": "mapbox",
@@ -336,12 +351,12 @@
       "paint": {
 		"line-opacity": 0,
         "line-width": 0
-	  }, 
+	  },
       "paint.sidewalks": {
   		"line-opacity": "@sidewalks_opacity",
         "line-color": "@sidewalks_nodata",
         "line-width": "@sidewalks_width"
-      } 
+      }
 	  }, {
       "id": "sidewalks_noone",
       "type": "line",
@@ -357,13 +372,13 @@
       "paint": {
 		"line-opacity": 0,
         "line-width": 0
-	  }, 
+	  },
       "paint.sidewalks": {
   		"line-opacity": "@sidewalks_opacity",
         "line-color": "@sidewalks_noone",
         "line-width": "@sidewalks_width_noone"
-       } 
-	  }, 
+       }
+	  },
 	  {
       "id": "sidewalks_alone",
       "type": "line",
@@ -379,7 +394,7 @@
       "paint": {
 		"line-opacity": 0,
         "line-width": 0
-	  }, 
+	  },
       "paint.sidewalks": {
   		"line-opacity": "@sidewalks_opacity",
         "line-color": "@sidewalks_alone",
@@ -400,12 +415,12 @@
       "paint": {
 		"line-opacity": 0,
         "line-width": 0
-	  }, 
+	  },
       "paint.sidewalks": {
   		"line-opacity": "@sidewalks_opacity",
         "line-color": "@sidewalks_two",
         "line-width": "@sidewalks_width_two"
-      } 
+      }
     },
     {
       "id": "sidewalks_three",
@@ -422,12 +437,12 @@
       "paint": {
 		"line-opacity": 0,
         "line-width": 0
-	  }, 
+	  },
       "paint.sidewalks": {
   		"line-opacity": "@sidewalks_opacity",
         "line-color": "@sidewalks_three",
         "line-width": "@sidewalks_width_three"
-      } 
+      }
     },
     {
       "id": "sidewalks_four",
@@ -445,13 +460,13 @@
       "paint": {
 		"line-opacity": 0,
         "line-width": 2
-	  }, 
+	  },
       "paint.sidewalks": {
 		"line-opacity": "@sidewalks_opacity",
         "line-color": "@sidewalks_four",
         "line-width": "@sidewalks_width_four"
-      } 
-    }, 
+      }
+    },
     {
       "id": "sidewalks_construction",
       "type": "line",
@@ -467,12 +482,12 @@
       "paint": {
 		"line-opacity": 0,
         "line-width": 2
-	  }, 
+	  },
       "paint.sidewalks": {
 		"line-opacity": "@sidewalks_opacity",
         "line-color": "@sidewalks_construction",
         "line-width": "@sidewalks_width"
-      } 
+      }
     },
     {
       "id": "noisemap_blue",
@@ -488,12 +503,12 @@
 		"line-opacity": 0,
         "line-width": 0,
 		"line-color": "@noisemap_blue"
-	  }, 
+	  },
       "paint.noise": {
 		"line-opacity": 0.6,
         "line-color": "@noisemap_blue",
         "line-width": "@noisemap_width"
-      } 
+      }
     },
     {
       "id": "noisemap_green",
@@ -509,12 +524,12 @@
 		"line-opacity": 0,
         "line-width": 0,
 		"line-color": "@noisemap_green"
-	  }, 
+	  },
       "paint.noise": {
 		"line-opacity": 0.7,
         "line-color": "@noisemap_green",
         "line-width": "@noisemap_width"
-      } 
+      }
     },
     {
       "id": "noisemap_orange",
@@ -530,12 +545,12 @@
 		"line-opacity": 0,
         "line-width": 0,
 		"line-color": "@noisemap_orange"
-	  }, 
+	  },
       "paint.noise": {
 		"line-opacity": 0.7,
         "line-color": "@noisemap_orange",
         "line-width": "@noisemap_width"
-      } 
+      }
     },
     {
       "id": "noisemap_red",
@@ -551,12 +566,12 @@
 		"line-opacity": 0,
         "line-width": 0,
 		"line-color": "@noisemap_red"
-	  }, 
+	  },
       "paint.noise": {
 		"line-opacity": 0.6,
         "line-color": "@noisemap_red",
         "line-width": "@noisemap_width"
-      } 
+      }
     },
     {
       "id": "steps_unknown",
@@ -699,7 +714,7 @@
           "base": 2,
           "stops": [[12, 1], [20, 2]]
         }
-      } 
+      }
     },
     {
       "id": "crosswalks",
@@ -723,7 +738,7 @@
           "base": 2,
           "stops": [[12, 1], [20, 10]]
         }
-      } 
+      }
     },
     {
       "id": "steps",
@@ -1033,23 +1048,12 @@
     "id": "wikipedia",
     "type": "symbol",
     "source": "walkingstreets",
-    "source-layer": "fill_wikipedia_rank",
+    "source-layer": "wikipedia_ranked",
 	"interactive": true,
     "filter": ["all", ["==", "$type", "Point"]],
     "layout": {
       "visibility": "visible",
-      "icon-image": {
-          "stops": [
-            [
-              12,
-              "mini-wikipedia-rank-{rank}"
-            ],
-            [
-              13,
-              "wikipedia-rank-{rank}"
-            ]
-          ]
-        },
+      "icon-image": "wikipedia-rank-{myRank}",
       "icon-allow-overlap": true,
       "text-field": "{name}",
       "text-font": "Open Sans Bold",
@@ -1063,6 +1067,13 @@
 	  "text-optional": true
     },
     "paint": {
+      "icon-size": {
+		  "base": 1,
+            "stops": [
+              [12,0.5],
+              [16,1]
+            ]
+          },
   	  "icon-opacity": 0,
       "text-opacity": 0,
   	  "text-color": "@label",
