@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+	<meta property="og:description" content="Помочь проекту «Улицы прогулок»" />
+	<meta property="og:title" content="Walking Streets" />
+    <title>Помочь проекту «Улицы прогулок»</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+	<link href='walkstreets_help.css' rel='stylesheet' type='text/css'>
+	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+</head>
+<body>
+<div id="page-wrapper">
+	<div id="page-content">
+	<h2>Вы можете помогать нам</h2>
+
+	<p>На данном этапе для развития проекта «<a href="http://walkstreets.org">Улциы прогулок</a>» нам не хватает рук и ног, чтобы собрать данные по городу. Ближайшая цель: охватить центр Москвы (внутри Садового кольца) и отметить на карте данные о тротуарах и доступности среды.</p>
+<ul>
+	<li><a href="#beginning">С чего начинать?</a></li>
+	<li><a href="#whatkindofdata">Какие данные нужны?</a></li>
+	<ul>
+		<li><a href="#sidewalks">Тротуары, пешеходные дорожки</a></li>
+		<li><a href="#accessibility_venues">Доступность среды</a></li>
+		<li><a href="#accessibility_steps">Лестницы</a></li>
+		<li><a href="#accessibility_kerbs">Высокие бордюры</a></li>
+	</ul>
+</ul>
+<p>Мы используем данные проекта <a href="http://openstreetmap.org">OpenStreetMap</a>, поэтому все собранные данные будут открытыми и доступными для всех.<p>
+	
+	<h3><a name="beginning"></a>C чего начать?</h3>
+	<ul>
+		<li>Зарегистрируйтесь на «<a href="http://openstreetmap.com">OpenStreetMap</a>»</li>
+		<li>Установите приложение «<a href="http://mapillary.com">Mapillary</a>»</li>
+		</li>Определитесь, как вам удобнее вносить правки: на компьютере или на смартфоне.</li>
+	</ul>
+	
+	<p>Вариант «Домашний компьютер»: Вы прогуливаетесь по городу с распечаткой карты, а потом отмечаете все собранные данные с помощью редактора в браузере. Распечатку карты для исследования можно взять на сервисе <a href="http://fieldpapers.org/">FieldPapers</a>. Для редактирования мы использовали <a href="http://www.openstreetmap.org/edit?editor=id">iD</a>. Рекомендуем начать исследовать на небольшой территории, например, в рамках одного квартала.</p>
+
+	<p>Вариант «Мобильный телефон»: вы отмечаете нужную информацию прямо на месте. Для этого есть несколько мобильных приложений. Например, это может быть <a href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=592990211&mt=8">Go Map!!</a> (iOS) или <a href="https://play.google.com/store/apps/details?id=de.blau.android">Vespucci</a> (Android).</p>
+
+	<p>На вики можно найти полный <a href="http://wiki.openstreetmap.org/wiki/Editing">список различных редакторов</a> OpenStreetMap, мы лишь рекомендовали те инструменты, которые попробовали сами.</p>
+
+<h3><a name="whatkindofdata"></a>Какие данные нужны?</h3>
+
+	<p>В первую очередь, нас интересует следующая информация:</p>
+	<ul>
+		<li>Тротуары: их наличие, ширина, тип и качество покрытия</li>
+		<li>Пешеходные дорожки (в парках, дворах)</li>
+		<li>Доступность заведений для инвалидных и детских колясок: наличие пандусов, ступени на входе</li>
+		<li>Лестницы на улицах и в подземных переходах: наличие рампы, бесступенчатые сьезды</li>
+		<li>Бордюры и сьезды с тротуаров: занижения бордюра или высокие бордюры.</li>
+	</ul>
+	
+	<p>Про каждый тип информации мы описали методику сбора подробнее ниже. Вы можете отмечать и уточнять и другие данные в рамках проекта OpenStreetMap, например скамейки в парках и скверах —&nbsp;мы планируем использовать эти данные на следующих этапах проекта. В OSM можно размечать <a href="http://wiki.openstreetmap.org/wiki/RU:%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D1%8B_%D0%BA%D0%B0%D1%80%D1%82%D1%8B">довольно обширный спектр различных типов объектов</a>. Большинство ответов на вопросы по процессу разметки можно найти в «<a href="http://wiki.openstreetmap.org/wiki/RU:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%D0%BA%D0%B0">Руководстве новичка</a>» на вики.</p> 
+	<p>Помимо отметки данных, мы рекомендуем фотографировать городскую среду с помощью приложения «<a href="http://mapillary.com">Mapillary</a>» — это хорошо помогает проилюстрировать место, мы показываем эти фотки в карточках объектов.</p>
+
+
+<h4><a name="sidewalks"></a>Тротуары и пешеходные дорожки</h4>
+<p>Отмеченные данные, используются в нашей <a href="http://walkstreets.org/#l=ru&mode=sidewalks">карте тротуаров</a>.
+
+<p>Подробное описание параметров тротуаров есть на <a href="http://wiki.openstreetmap.org/wiki/RU:%D0%A2%D1%80%D0%BE%D1%82%D1%83%D0%B0%D1%80%D1%8B">соответствующей вики-странице</a> OpenStreetMap.</p>
+
+<div class="video-example">
+<p>Покажем процесс нанесения на карту нового тротуара:</p>
+<div align="center"><iframe src="https://player.vimeo.com/video/133280479" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+</div>
+
+<p>Тротуары на улицах обозначаются следующими тегами: <span class="tag">highway=footway</span> + <span class="tag">footway=sidewalk</span></p>
+
+<p>Пешеходные улицы (например, улица Арбат), отмечаются тегом <span class="tag">highway = pedestrian</span></p>
+
+<p>Если тротуар или пешеходная дорожка сейчас на реконструкции, то нужно отметить тег: <span class="tag">construction=yes</span>
+
+<p>Для нашего проекта <b>важна ширина</b> тротуаров. Поэтому, рекомендуем запастись рулеткой для замеров, или, достаточно носить в кармане портновский сантиметр —&nbsp;он легче и удобнее.</p>
+
+<div class="image-example"><img src="guide/sidewalk_tactile_tiles.jpg" width="100%" /><br/>Тротуар шириной 1,5 м (3 плитки по 50 см)</div><p>Самый простой способ определить ширину тротуара — посчитать число тактильных плиток (жёлтые ребристые квадратики). Стандартный размер плиток в Москве — 50 сантиметров. Это гораздо проще и быстрее, чем каждый раз лазить с линейкой.</p>
+<p>Бывает так, что ширина тротуара не может быть определена точно (столбы, или заграждения). Тогда можно отметить приблизительное значение, как вам кажется: сколько могли бы выстроиться в шеренгу из расчёта 1 человек — 60 сантиметров.</p>
+<p>Значение ширины тротуара вносится в тег <span class="tag">width</span>. Например, <span class="tag">width = 1.5</span>. 
+Значение ширины указывается в метрах, с точностью до 10 сантиметров.</p>
+<p>Далее, нужно отметить тип поверхности с помощью тега <span class="tag">surface</span>, в большинстве случаев это будет или асфальт — <span class="tag">surface = asphalt</span> или плитка (<span class="tag">surface = paving stones</span>). Подробное описание типов поверхности — <a href="http://wiki.openstreetmap.org/wiki/RU:Key:surface">здесь</a>.
+
+<h4><a name="accessibility_venues"></a>Доступность заведений для маломобильных</h4>
+
+<p>Данные о доступности среды показываются <a href="http://walkstreets.org/#l=ru&mode=sidewalks">в специальной карте</a>. Для этой карты нам важно иметь данные о доступности конкретных мест (организаций, кафешек, магазинов и т.п.) и состояние уличной инфраструктуры для маломобильных граждан.</p>
+
+<p>Нас интересует доступность заведений и общественных пространст для маломобильных пешеходов: для инвалидов-колясочников, пожилых людей и родителей с детскими колясками. В ходе исследования мы доступность проверяя вход в заведение проверяя за входной дверью внутри нет крутых ступенек.</p>
+
+<p>Для отметки доступности используется тег <span class="tag">wheelchair</span> со следующими значениями:</p>
+
+<div class="examples-row">
+	<div class=""><p><span class="tag">wheelchair = yes</span> Заведение доступно — в заведение можно попасть и с детской коляской и в инвалидном кресле. На входе нет ступенек выше 7 см, а если и есть ступеньки, то владельцы заведения позаботились смонтировать удобный пандус. А ещё проём входной двери должен быть шире 60 см.</p></div>
+	<div class="image-example"><img src="guide/accessible.jpg" width="100%"/></div>
+</div>
+<div class="examples-row">
+	<div class=""><p><span class="tag">wheelchair = limited</span> Заведение ограниченно доступно — в инвалидном кресле, скорее всего, в это заведение без посторонней помощи не попасть: на входе одна-две невысоких ступеньки. При этом, с детской коляской можно с небольшими усилиями проникнуть внутрь. Например, на входе — одна-две не очень высоких ступеньки.</p></div>
+	<div class="image-example"><img src="guide/limited.jpg" width="100%"/></div>
+</div>
+<div class="examples-row">
+	<div class=""><p><span class="tag">wheelchair = no</span> Заведение недоступно — ни с детской коляской, ни в инвалидном кресле в заведение проникнуть сложно, есть или крутая лестница без рампы, высокое крыльцо, или нужно подниматься на второй-третий этаж или спускаться вниз.</p></div>
+	<div class="image-example"><img src="guide/not_accessible.jpg" width="100%"/></div>
+</div>
+	
+<p>Покажем процесс внесения правок на примере редактора iD:</p>
+<div align="center"><iframe src="https://player.vimeo.com/video/133281780" width="500" height="285" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+
+<h4><a name="accessibility_steps"></a>Лестницы</h4>
+
+<p>Лестницы в OpenStreetMap отмечаются тегом <span class="tag">highway=steps</span>. Для нашего проекта важно, чтобы было отмечено наличие или что важнее —&nbsp;отсутствие рампы или пандуса на лестницах. Более подробно на вики OSM <a href="http://wiki.openstreetmap.org/wiki/RU:Tag:highway%3Dsteps">про лестницы</a> и <a href="http://wiki.openstreetmap.org/wiki/RU:Key:ramp">рампы</a>. Отмечать лестницы нужно для подземных переходов и просто встречающиеся на улице.</p>
+	
+<div class="examples-row">
+	<div class=""><p><span class="tag">highway = steps</span> + <span class="tag">ramp = yes</span> — на лестнице есть, что-то, что могло бы использоваться колясками (хотя, конечно, это можно считать условно доступной средой, так как в большинстве случаев это плохие рампы).</p>
+	</div>
+	<div class="image-example"><img src="guide/ramp.jpg" width="100%"/></div>
+</div>
+<div class="examples-row">
+	<div class=""><p><span class="tag">highway = steps</span> + <span class="tag">ramp = no</span> Лестница ничем не оборудована, это практически невозможно преодолеть в инвалидном кресле и не каждый решится с детской коляской.</p>
+	</div>
+	<div class="image-example"><img src="guide/no_ramp.jpg" width="100%"/></div>
+</div>
+
+<h4><a name="accessibility_kerbs"></a>Высокие бордюры</h4>
+<p>Речь про высокие бордюры и места, где сьезд с тротуара при пересечении с проезжей частью не занижен. В самое ближайшее время мы добавим более подробное описание по этому типу данных. Пока же краткая инструкция такая: отмечать точечный объект на тротуаре (добавлять узел) и выставлять ему тег <span class="tag">barrier = kerb</span></p>
+
+<hr/>
+<p>Редактирование OpenStreetMap кажется запутанным только на первый взгляд. Чтобы помочь разобраться вам во всём этом, публикуем подборку ссылок для изучения OpenSteetMap:
+<ul>
+<li><a href="http://learnosm.org/ru/">learnosm.org/ru/</a></li>
+<li>Wiki:  <a href="http://wiki.openstreetmap.org/wiki/RU:%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%D0%BA%D0%B0">Руководство новичка</a></li>
+<li><a href="http://josm.ru/">josm.ru/</a></li>
+<li><a href="http://gis-lab.info/qa/josm-start.html">gis-lab.info/qa/josm-start.html</a></li>
+<li><a href="http://www.youtube.com/watch?v=Ir-3K0pjwOI">Learn How To Map in OpenStreetMap</a></li>
+<li><a href="http://www.youtube.com/watch?v=DJ2TARmvTao&list=PLCE6296A33CF47955">OpenStreetMap Basics</a> [EN]</li>
+</ul></p>
+<p>Удачи в сборе ценных данных, вы очень нам поможете с проектом!</p>
+	</div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter31276253 = new Ya.Metrika({
+                    id:31276253,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    trackHash:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/31276253" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-64810184-1', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</div>
+</body>
+</html>
