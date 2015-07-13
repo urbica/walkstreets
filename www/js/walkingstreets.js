@@ -126,8 +126,8 @@ accessibilityDescriptions = {
 		en: "This venue is not accessible for wheelchairs and strollers."
 	},
 	limited: { 
-		ru: "Заведение доступно для детских колясок с некоторыми услиями, а для маломобильных граждан это заведение недоступно.",
-		en: "Заведение доступно для детских колясок с некоторыми услиями, а для маломобильных граждан это заведение недоступно."
+		ru: "Заведение доступно для детских колясок с некоторыми усилиями, а для маломобильных граждан это заведение недоступно.",
+		en: "This venue is accessible for strollers, but wheelchair people can't enter here without assistance."
 	},
 	unknown: { 
 		ru: "К сожалению, нам пока неизвестно — доступно ли это заведение для колясок.",

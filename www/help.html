@@ -28,6 +28,8 @@
 </ul>
 <p>Мы используем данные проекта <a href="http://openstreetmap.org">OpenStreetMap</a>, поэтому все собранные данные будут открытыми и доступными для всех.<p>
 	
+<p>Для координации усилий по сбору данных мы стартовали специальную <a href="https://www.facebook.com/groups/walkstreets/">группу в Фейсбуке</a>, и ещё особо сложные моменты о разметке можно спросить <a href="http://forum.openstreetmap.org/viewforum.php?id=21">у русскоязычного сообщества</a> на форуме OpenStreetMap.</p>
+	
 	<h3><a name="beginning"></a>C чего начать?</h3>
 	<ul>
 		<li>Зарегистрируйтесь на «<a href="http://openstreetmap.com">OpenStreetMap</a>»</li>
@@ -119,8 +121,54 @@
 	<div class="image-example"><img src="guide/no_ramp.jpg" width="100%"/></div>
 </div>
 
+<p>Помимо наличия рампы на лестницах, стоит отметить число ступенек на лестнице. Это можно сделать с помощью тега 
+	<span class="tag">step_count</span> (например, <span class="tag">step_count = 24</span>).</p>
+	
+<h4><a name="accessibility_crosswalks"></a>Бесступенчатые сьезды</h4>
+<p>Речь, про места, где есть возможность подняться или спуститься в подземный переход без ступенек. В OpenStreetMap сейчас нет простого способа отметить такие места, поэтому отмечать их нужно следующей комбинацией тегов:
+	<p><span class="tag">highway = footway</span> + <span class="tag">incline = up / down</span> + <span class="tag">width = </span> + <span class="tag">handrail = yes / no<span></p>
+	<p>
+<div class="examples-row">
+	<div class="">
+		<p><span class="tag">highway = footway</span> — значение тега означает, что речь идёт про пешеходную дорожку.</p>
+		<p><span class="tag">incline = up | down</span> — это тег используется для отметки наклонов: <span class="tag">up</span>  — наклон вверх по направлению нарисованной в OSM линии (видно при редактировании), <span class="tag">down</span> — наклон вниз по нраправлению линии. Для особо крутых уклонов стоит отметить конкретное значение в градусах. <a href="http://wiki.openstreetmap.org/wiki/RU:Key:incline">Подробнее о разметке наклонов</a>.</p>
+		<p><span class="tag">handrail = yes | no</span> — отмечается наличие или отсутствие перил. <a href="http://wiki.openstreetmap.org/wiki/Key:handrail">Подробнее на вики OSM</a></p>
+	</div>
+	<div class="image-example"><img src="guide/incline_footway.jpg" width="100%"/></div>
+</div>
+
+
+
 <h4><a name="accessibility_kerbs"></a>Высокие бордюры</h4>
-<p>Речь про высокие бордюры и места, где сьезд с тротуара при пересечении с проезжей частью не занижен. В самое ближайшее время мы добавим более подробное описание по этому типу данных. Пока же краткая инструкция такая: отмечать точечный объект на тротуаре (добавлять узел) и выставлять ему тег <span class="tag">barrier = kerb</span></p>
+<p>Речь про места, где тротуар пересекается с проезжей частью — на пешеходных переходах и выездах из дворов. Для части пересечений есть допустимое занижение (2—4 см), а где-то высокий бордюр и это препятствие. В проекте это пока никак не используется, но будет важно позже при построении маршрутов для маломобильных пользователей.</p>
+
+<div class="examples-row">
+	<div class=""><p><b>Занижения бордюров на переходах</b></p><p><span class="tag">highway = crosswalk</span> + <span class="tag">sloped_curb = no / one / both</span><br/>
+	<span class="tag">sloped_curb = no</span> — переход не имеет занижения бордюра (как на примере справа);<br/>
+	<span class="tag">sloped_curb = one</span> — занижение только с одной стороны;<br/>
+	<span class="tag">sloped_curb = both</span> — занижение бордюра с обеих сторон.
+	<p>Если переход регулируемый, то ставится тег <span class="tag">crossing = traffic_signals</span></p>
+	<p>Детальнее про <a href="http://wiki.openstreetmap.org/wiki/RU:Key:crossing">разметку пешеходных переходов</a>.</p>
+	</div>
+	<div class="image-example"><img src="guide/crosswalk_kerb.jpg" width="100%"/></div>
+</div>
+<div class="examples-row">
+	<div class=""><p><b>Бордюры на съездах без переходов</b></p>
+		<p>В этом случае нужно нарисовать точку на линии пешеходной дорожки с тегом <span class="tag">kerb</span></p>
+		<p>В русскоязычном сообществе OSM предлагается значения тега следующим образом:<br/>
+			<span class="tag">kerb = raised</span> - выше 3 см, подразумевается wheelchair=no.<br/>
+			<span class="tag">kerb = lowered</span> - ниже 3 см, подразумевается wheelchair=yes / limited / assisted.<br/>
+			<span class="tag">kerb = flush</span> - бордюр заподлицо с дорогой (съезд). Подразумевается wheelchair=yes.<br/>
+		</p>
+		
+	<p>Детальнее про <a href="http://wiki.openstreetmap.org/wiki/RU:Tag:barrier%3Dkerb">barrier = kerb</a>.</p>
+	</div>
+	<div class="image-example"><img src="guide/kerb.jpg" width="100%"/></div>
+</div>
+<p></p>
+<hr/>
+<h3>Нужна подсказка?</h3>
+<p>Напомним, что для координации усилий по сбору данных мы стартовали специальную <a href="https://www.facebook.com/groups/walkstreets/">группу в Фейсбуке</a>, и ещё можно спросить <a href="http://forum.openstreetmap.org/viewforum.php?id=21">на форуме русскоязычного сообщества</a> OpenStreetMap.</p>
 
 <hr/>
 <p>Редактирование OpenStreetMap кажется запутанным только на первый взгляд. Чтобы помочь разобраться вам во всём этом, публикуем подборку ссылок для изучения OpenSteetMap:
