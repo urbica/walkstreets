@@ -28,7 +28,7 @@ var lang = {
 	searchingPhotos: { ru: "Ищем фотографии рядом...", en: "Searching nearby photos..."},
 	youCanHelpText: { ru: "Улучшить данные", en: "Improve data"},
 	youCanHelpUrl: { 
-		ru: "https://github.com/urbica/walkstreets/wiki/%D0%9F%D0%BE%D0%BC%D0%BE%D1%89%D1%8C-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%83", 
+		ru: "http://walkstreets.org/help.html", 
 		en: "https://github.com/urbica/walkstreets/wiki/Contribute-the-project"
 	},
 	underConstruction: { ru: "На ремонте", en: "Under construction" },
