@@ -82,6 +82,7 @@ var layer_modes = {
 	cutting: { mode: "accessibility", layout: "cutting" },
 	noise: { mode: "noise", layout: "noise" },
 	noise_labels: { mode: "noise", layout: "noise" },
+	noise_online: { mode: "noise", layout: "noise" },
 	noisemap_blue: { mode: "noise", layout: "noise_streets" },
 	noisemap_green: { mode: "noise", layout: "noise_streets" },
 	noisemap_orange: { mode: "noise", layout: "noise_streets" },
@@ -198,6 +199,10 @@ var Requests = {
     }
 };
 
+//Instagram API vars
+var accessToken = '2008891651.9fedd4f.78bc300b785148d0a81a0d62ea8a81a7';
+
+
 var shareFacebookLink = "http://www.facebook.com/share.php?u=http://walkstreets.org/",
 shareTwitterLink = {
 ru: "https://twitter.com/intent/tweet?text=Карта пешеходной среды в Москве от @urbicadesign http://walkstreets.org/",
@@ -213,9 +218,11 @@ if(Requests.QueryString("l")) {
 }
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibWluaWthcm1hIiwiYSI6IjBhYjUzYWE4NjY4ZjkwYjM5Y2JjZTkyMTEwMzZkNTA1In0.zDqI_pymt9GAXoZlyz5Hrw';
+
+
+
 mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 	if (err) throw err;
-
 
 	//statements
 	var mapArea = d3.select("#map"),
@@ -440,12 +447,123 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 						.styleTween("background", function() { return d3.interpolate("#ffff90", "#ffffff"); })
 			;
 		}
-
 	});
 	
 	map.on('moveend', function(e) {
 		setState();
 	});
+	
+	
+	map.on('style.load', function(e) {
+		
+	
+	var noiseJSON = {
+      "type": "geojson",
+      "data": {
+        "type": "FeatureCollection",
+        "features": [{
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [37.6276, 55.7357]
+          },
+          "properties": {
+            "title": "Mapbox DC",
+            "marker-symbol": "noise-red"
+          }
+        }]
+      }
+    };
+	
+
+	console.log(noiseJSON.data.features);
+		
+  	  $.ajax({
+  	      url: 'https://api.instagram.com/v1/tags/noisemap/media/recent?count=500&access_token=' + accessToken,
+  	      dataType: 'jsonp',
+  	      type: 'GET',
+  	      data: {client_id: accessToken},
+  	      success: function(data){
+  				if(data.data.length > 0) {
+  					console.log(data);
+  	           	 	for(x in data.data){
+  							if(data.data[x].location) {
+								noiseJSON.data.features.push({
+									"type": "Feature",
+	          					  	"geometry": {
+	            						"type": "Point",
+	            						"coordinates": [data.data[x].location.longitude, data.data[x].location.latitude]
+	          					  },
+	          					"properties": {
+									"level": getNoiseLevel(data.data[x].caption.text),
+	            					"title": data.data[x].caption.text,
+	            					"marker-symbol": "noise-red",
+									"category": getNoiseCategory(getNoiseLevel(data.data[x].caption.text)),
+									"image": data.data[x].images.low_resolution.url,
+									"link": data.data[x].link
+									
+	          				  }
+				});
+
+						}
+  					}
+				    map.addSource("markers", noiseJSON);
+				    map.addLayer({
+				      "id": "noise_online",
+				      "type": "symbol",
+				      "source": "markers",
+					  "interactive": true,
+					  "layout": {
+					      "visibility": "visible",
+					      "icon-image": {
+					          "stops": [
+					            [
+					              13,
+					              "mini-noise-{category}"
+					            ],
+					            [
+					              14,
+					              "noise-{category}"
+					            ]
+					          ]
+					        },
+					    "icon-allow-overlap": true,
+						"text-field": "{level} dB",
+      					"text-font": "Open Sans Bold",
+   						"text-padding": 10,
+     					"text-letter-spacing": 0.05,
+    					"text-max-width": 5,
+      					"text-line-height": 1.2,
+	  					"text-anchor": "top",
+	  					"text-offset": [0,1],
+	   					"text-allow-overlap": false,
+	  					"text-optional": true
+					    },
+					    "paint": {
+					  	  "icon-opacity": 0,
+      					  "text-opacity": 0,
+  	  					  "text-color": "@label",
+  	  					  "text-size": 10
+					    },
+					    "paint.noise": {
+					      "icon-opacity": 1,
+      					  "text-opacity": 1,
+      					  "text-color": "@label",
+      					  "text-size": 10
+					    }
+				    });				
+  				}
+  	    },
+  	    error: function(data){
+  	        console.log(data);
+  	    }
+  		});
+		
+		
+		
+		
+	});
+	
 	
 	//getting mode from URL hash param
 	if(Requests.QueryString("mode")) {
@@ -728,9 +846,21 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		if(c>=80) cat = "red";	
 		return cat;
 	}
+	
+	function getNoiseLevel(caption) {
+		var lvl; 
+		lvl = caption.replace(/\D/g,'');
+		return lvl;
+	}
 
 	function getTooltipHint(id, props) {
 		return id;
 	}
+	
+	function convertTime(time) {
+		var date = new Date(parseInt(time)*1000);
+		return(date.toString()); // Wed Jan 12 2011 12:42:46 GMT-0800 (PST)
+	}
+
 
 });
