@@ -339,7 +339,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		style: style,
 		center: [Requests.QueryString("lat") ? Requests.QueryString("lat") : 55.7357, Requests.QueryString("lng") ? Requests.QueryString("lng") : 37.6276],
 		zoom: Requests.QueryString("z") ? Requests.QueryString("z") : 14,
-		minZoom: 13,
+		minZoom: 12,
 		maxZoom: 20
 	});
 
@@ -379,7 +379,6 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 
 			features.forEach(function(f,i){
 				if(layer_modes[f.layer.id].mode == cm) index = i;
-				console.log(layer_modes[f.layer.id].mode);
 			});
 		}
 		return index;
@@ -428,10 +427,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		}, function(err, features) {
 			if (err) throw err;
 			if (isThereProperFeature(features)) {
-				console.log(getProperFeature(features));
-				console.log(features);
 
-//				console.log(features[getProperFeature(features)]);
 				getPanel(features[getProperFeature(features)],e.latLng);
 
 				sidePanel.style({
@@ -492,7 +488,6 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
     };
 
 
-	console.log(noiseJSON.data.features);
 
   	  $.ajax({
   	      url: 'https://api.instagram.com/v1/tags/noisemap/media/recent?count=500&access_token=' + accessToken,
@@ -501,7 +496,6 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
   	      data: {client_id: accessToken},
   	      success: function(data){
   				if(data.data.length > 0) {
-  					console.log(data);
   	           	 	for(x in data.data){
   							if(data.data[x].location) {
 								noiseJSON.data.features.push({
@@ -571,7 +565,6 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
   				}
   	    },
   	    error: function(data){
-  	        console.log(data);
   	    }
   		});
 
