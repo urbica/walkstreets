@@ -5,14 +5,14 @@ var l = "en", // default language
 
 var lang = {
 	logo: { ru: "Улицы прогулок", en: "Walking Streets" },
-	m: { ru: "м", en: "m"}, 
+	m: { ru: "м", en: "m"},
 	db: { ru: "дБ", en: "dB"},
 	lang: { ru: "English", en: "По-русски" },
 	seen: { ru: "Просмотров статьи в июне", en: "Views of article  in Jun 2015"},
 	about: { ru: "О проекте", en: "About" },
 	disqus: { ru: "Обсуждение", en: "Discus" },
 	footway: { ru: "Тротуар, дорожка", en: "Sidewalk, path" },
-	path: { ru: "Пешеходная дорожка", en: "Path"}, 
+	path: { ru: "Пешеходная дорожка", en: "Path"},
 	pedestrian: { ru: "Пешеходная улица", en: "Pedestrian street"},
 	steps: { ru: "Лестница", en: "Steps" },
 	cutting: { ru: "Наклонный сьезд", en: "Cutting" },
@@ -27,8 +27,8 @@ var lang = {
 	limited: { ru: "Ограничено", en: "limited"},
 	searchingPhotos: { ru: "Ищем фотографии рядом...", en: "Searching nearby photos..."},
 	youCanHelpText: { ru: "Улучшить данные", en: "Improve data"},
-	youCanHelpUrl: { 
-		ru: "http://walkstreets.org/help.html", 
+	youCanHelpUrl: {
+		ru: "http://walkstreets.org/help.html",
 		en: "https://github.com/urbica/walkstreets/wiki/Contribute-the-project"
 	},
 	underConstruction: { ru: "На ремонте", en: "Under construction" },
@@ -95,97 +95,97 @@ var layer_modes = {
 
 
 var sidewalksDescriptions = {
-	noone: { 
+	noone: {
 		ru: "Вы с большим трудом протиснетесь на этой дорожке, она очень узкая, не разойтись.",
 		en: "This path is too narrow, there is not good to walk."
 	},
-	alone: { 
+	alone: {
 		ru: "На этой дорожке можно пройти одному, но если вы гуляете с компанией, придётся гулять гуськом.",
 		en: "You can walk here alone. It is narrow sidewalk."
 	},
-	two: { 
+	two: {
 		ru: "Вполне удобно прогуливаться вдвоём, троим же будет немного тесно.",
 		en: "This sidewalk is not sow wide and will be suitable for two."
 	},
-	three: { 
+	three: {
 		ru: "Компании из трёх человек будет удобно гулять и общаться на этой дорожке.",
 		en: "This is good path to walk and will be suitable for three pedestrians."
 	},
-	four: { 
+	four: {
 		ru: "Дорожка широкая и удобная даже для компании из четырёх человек, легко разойтись с встречными пешеходами.",
 		en: "This path wide and comfortable. You can walk with four and more people."
 	}
 },
 
 accessibilityDescriptions = {
-	no: { 
+	no: {
 		ru: "Заведение не доступно для детских колясок и маломобильных граждан.",
 		en: "This venue is not accessible for wheelchairs and strollers."
 	},
-	yes: { 
+	yes: {
 		ru: "Заведение доступно и для детских колясок и для маломобильных граждан.",
 		en: "This venue is not accessible for wheelchairs and strollers."
 	},
-	limited: { 
+	limited: {
 		ru: "Заведение доступно для детских колясок с некоторыми усилиями, а для маломобильных граждан это заведение недоступно.",
 		en: "This venue is accessible for strollers, but wheelchair people can't enter here without assistance."
 	},
-	unknown: { 
+	unknown: {
 		ru: "К сожалению, нам пока неизвестно — доступно ли это заведение для колясок.",
 		en: "Sorry, we don't know how accessible this place."
 	}
 },
 
 stepsDescriptions = {
-	no: { 
+	no: {
 		ru: "Эта лестница непригодна для любых видов колясок, тут нет никаких приспособлений.",
 		en: "Not accessible for strollers and wheelchairs."
 	},
-	yes: { 
+	yes: {
 		ru: "Этот съезд не содержит ступенек и доступен для всех видов колясок.",
 		en: "It's accessible for strollers and wheelchairs"
 	},
-	limited: { 
+	limited: {
 		ru: "Лестница имеет только рампу, и скорее всего, можно подняться/спуститься с детской коляской",
 		en: "Limited Accessibility. TBD"
 	},
-	unknown: { 
+	unknown: {
 		ru: "К сожалению, нам пока неизвестно — доступна ли эта лестница для колясок.",
 		en: "Sorry, we don't know how accessible this steps."
 	}
 },
 accessibilityValues = {
-	no: { 
+	no: {
 		ru: "Недоступно",
 		en: "Not accessible"
 	},
-	yes: { 
+	yes: {
 		ru: "Доступно",
 		en: "Accessible"
 	},
-	limited: { 
+	limited: {
 		ru: "Ограничено",
 		en: "Limited"
 	},
-	unknown: { 
+	unknown: {
 		ru: "Неизвестно",
 		en: "Unknown"
 	}
 },
 noiseDescriptions = {
-	blue: { 
+	blue: {
 		ru: "Очень тихо и спокойно, можно гулять с маленьким ребёнком и он будет спать.",
 		en: "It is very quiet place in the city. Little baby can sleep on the walk."
 	},
-	green: { 
+	green: {
 		ru: "Достаточно тихо на улице, можно спокойно общаться.",
 		en: "It is quiet street. Good to walk and talk here."
 	},
-	orange: { 
+	orange: {
 		ru: "Не так тихо, как хотелось бы. Требуется немного повысить голос, чтобы общаться на улице.",
 		en: "A bit noisy here. You have to speak loud to talk while walking."
 	},
-	red: { 
+	red: {
 		ru: "Очень шумная улица. Нужно очень громко разговаривать чтобы друг друга услышать когда общаетесь.",
 		en: "Very noisy and uncomfortable place. You have to be very loud when wou walking with somebody."
 	}
@@ -208,7 +208,7 @@ shareTwitterLink = {
 ru: "https://twitter.com/intent/tweet?text=Карта пешеходной среды в Москве от @urbicadesign http://walkstreets.org/",
 en: "https://twitter.com/intent/tweet?text=Interactive study about pedestrian conditions in Moscow by @urbicadesign http://walkstreets.org/"
 };
-//getting language from URL hash param 
+//getting language from URL hash param
 if(Requests.QueryString("l")) {
 	if(Requests.QueryString("l") == "ru") l = "ru";
 	if(Requests.QueryString("l") == "en") l = "en";
@@ -234,25 +234,25 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		blackScreen = d3.select("#black-screen"),
 		blackScreenDisqus = d3.select("#black-screen-disqus"),
 		disqusScreen = d3.select("#disqus-screen");
-	
-	
+
+
 	//setting controls
 	d3.select("#head-about").on('click', function() {
 		welcomeScreen.style({display: "block" });
 		blackScreen.style({display: "block" });
 		});
-	
+
 	//setting controls
 	d3.select("#welcome-close").on('click', function() {
 		welcomeScreen.style({display: "none" });
 		blackScreen.style({display: "none" });
 	});
-	
+
 	blackScreen.on('click', function() {
 		welcomeScreen.style({display: "none" });
 		blackScreen.style({display: "none" });
 	});
-	
+
 	d3.select("#head-disqus").on('click', function() {
 		disqusScreen.style({display: "block" });
 		blackScreenDisqus.style({display: "block" });
@@ -262,7 +262,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		disqusScreen.style({display: "none" });
 		blackScreenDisqus.style({display: "none" });
 	});
-		
+
 	blackScreenDisqus.on('click', function() {
 		disqusScreen.style({display: "none" });
 		blackScreenDisqus.style({display: "none" });
@@ -272,20 +272,20 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 	d3.select("#welcome-about-"+l).style({ display: "block"});
 	if(l == "ru") d3.select("#welcome-about-en").text("");
 	if(l == "en") d3.select("#welcome-about-ru").text("");
-	
+
 	//setting the proper title for logo
 	d3.select("#head-logo").text(lang.logo[l]);
 
-	//setting proper lang title 
+	//setting proper lang title
 	d3.select("#head-lang").text(lang.lang[l]);
-	
+
 	//setting proper about link
-	d3.select("#head-about").text(lang.about[l]); 
+	d3.select("#head-about").text(lang.about[l]);
 
 	//setting proper disqus link
-	d3.select("#head-disqus-text").text(lang.disqus[l]); 
-	
-	
+	d3.select("#head-disqus-text").text(lang.disqus[l]);
+
+
 	if( window.innerWidth <= 750) {
 		modesPanel.on('click', function() {
 			modesPanel.style({display: "none"});
@@ -293,12 +293,12 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 				layersBtn.style({display: "block"});
 			}
 		});
-	
+
 		layersBtn.on('click', function() {
 			layersBtn.style({display: "none"});
 			modesPanel.style({display: "block"});
 		});
-			
+
 	}
 
 	//build modes menu
@@ -315,16 +315,16 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 
 	// Set the global transition property in the stylesheet
 	style.transition = {
-		duration: 600, // 
+		duration: 600, //
 		delay: 0
 	};
-	
+
 //	in case of English making map in English
 	if(l=="en") {
 		style.constants["@name"] = "{name_en}";
 		//style.constants["@name_w"] = "{name:en}";
 	}
-	
+
 
 	//check for Mapbox WebGL support
 	if(!mapboxgl.supported()) {
@@ -342,14 +342,14 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		minZoom: 13,
 		maxZoom: 20
 	});
-	
+
 	function setState() {
 		var ll = map.getCenter(),
 			z = map.getZoom();
-			
+
 		//setting hash
 		location.hash = buildHash(l,ll.lat,ll.lng,z);
-		
+
 		d3.select("#head-lang").text(lang.lang[l])
 		.on('click', function() {
 			if(l=="en") {
@@ -360,36 +360,49 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 				window.location.reload();
 			}
 		});
-		
+
 		d3.select("#share-facebook-link").attr("href", shareFacebookLink + location.hash);
 		d3.select("#share-twitter-link").attr("href", shareTwitterLink[l] + location.hash);
-		
+
 	}
-	
+
 	function buildHash(l,lat,lng,z) {
 		var hsh;
 		hsh = "#" + "l=" + l + "&lat=" + lat.toFixed(6) + "&lng=" + lng.toFixed(6) + "&z=" + z.toFixed(2);
 		if(cm != "none") hsh += "&mode=" + cm;
-		return hsh; 
+		return hsh;
 	}
-	
+
 	function getProperFeature(features) {
 		var index;
 		if(features.length > 0) {
-			
+
 			features.forEach(function(f,i){
 				if(layer_modes[f.layer.id].mode == cm) index = i;
+				console.log(layer_modes[f.layer.id].mode);
 			});
-		} 
-		if(index) return index;
+		}
+		return index;
 	}
-	
+
+	function isThereProperFeature(features) {
+		var proper = false;
+		if(features.length > 0) {
+			features.forEach(function(f,i){
+				if(layer_modes[f.layer.id].mode == cm) {
+					proper = true;
+				}
+			});
+		}
+		return proper;
+	}
+
 	map.on('mousemove', function(e) {
 		map.featuresAt(e.point, {
-			radius: 16
+			radius: 10
 		}, function(err, features) {
 			if (err) throw err;
-			if (getProperFeature(features)) {
+			if (isThereProperFeature(features)) {
 				d3.select(".mapboxgl-canvas").style({
 					cursor: "pointer"
 				});
@@ -409,15 +422,18 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		});
 	});
 
-	map.on('click', function(e) {	
+	map.on('click', function(e) {
 		map.featuresAt(e.point, {
-			radius: 16
+			radius: 10
 		}, function(err, features) {
 			if (err) throw err;
-			if (getProperFeature(features)) {
+			if (isThereProperFeature(features)) {
+				console.log(getProperFeature(features));
+				console.log(features);
 
+//				console.log(features[getProperFeature(features)]);
 				getPanel(features[getProperFeature(features)],e.latLng);
-					//getPanel(features[getProperFeature(features)],e.latLng);
+
 				sidePanel.style({
 					display: "block",
 					'max-height': (window.innerHeight-90) + "px"
@@ -431,8 +447,8 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 
 		});
 	});
-	
-	
+
+
 	//on map load animating modes panel background
 	map.on('load', function(e) {
 		var white = d3.rgb
@@ -448,15 +464,15 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 			;
 		}
 	});
-	
+
 	map.on('moveend', function(e) {
 		setState();
 	});
-	
-	
+
+
 	map.on('style.load', function(e) {
-		
-	
+
+
 	var noiseJSON = {
       "type": "geojson",
       "data": {
@@ -474,10 +490,10 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
         }]
       }
     };
-	
+
 
 	console.log(noiseJSON.data.features);
-		
+
   	  $.ajax({
   	      url: 'https://api.instagram.com/v1/tags/noisemap/media/recent?count=500&access_token=' + accessToken,
   	      dataType: 'jsonp',
@@ -501,7 +517,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 									"category": getNoiseCategory(getNoiseLevel(data.data[x].caption.text)),
 									"image": data.data[x].images.low_resolution.url,
 									"link": data.data[x].link
-									
+
 	          				  }
 				});
 
@@ -551,34 +567,34 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
       					  "text-color": "@label",
       					  "text-size": 10
 					    }
-				    });				
+				    });
   				}
   	    },
   	    error: function(data){
   	        console.log(data);
   	    }
   		});
-		
-		
-		
-		
+
+
+
+
 	});
-	
-	
+
+
 	//getting mode from URL hash param
 	if(Requests.QueryString("mode")) {
 		changeMode(Requests.QueryString("mode"));
 	} else {
 		document.title = lang.logo[l];
 	}
-	
-	
+
+
 	function getPanel(feature, latLng) {
 
 
 		//clear sidepanel
 		sidePanel.text("");
-		
+
 		var title, category, value, description, youCanHelp,
 			params = [],
 			props = feature.properties,
@@ -592,8 +608,8 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		if(layer_modes[feature.layer.id].layout=="sidewalks") {
 			title = lang[props.highway][l];
 			//getting params of the object
-			if(props.width_num) { 
-				if(props.width_num < 1.2) 
+			if(props.width_num) {
+				if(props.width_num < 1.2)
 					value = '→ ' + props.width_num + ' ' + lang.m[l] + ' ←';
 				else
 					value = '← ' + props.width_num + ' ' + lang.m[l] + ' →';
@@ -605,16 +621,16 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 				header.attr("class", "sidewalk-unknown");
 				youCanHelp = true;
 			}
-			
-			//if is it crossing 
+
+			//if is it crossing
 			if(props.footway == "crossing") {
 				title = lang.crossing[l];
 				value = '';
 			}
-			
+
 			getPhoto("mapillary", photo, latLng);
 		}
-		
+
 		if(layer_modes[feature.layer.id].layout=="sidewalks_construction") {
 			title = lang[props.highway][l];
 			value = lang.underConstruction[l];
@@ -622,14 +638,14 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 			header.attr("class", "sidewalk-construction");
 		}
 		//underConstructionDescription
-		
+
 		//processing accessibility data
 		if(layer_modes[feature.layer.id].layout=="accessibility_point") {
-			if (l == "en" && props['name:en']) 
-				title = props['name:en'] 
+			if (l == "en" && props['name:en'])
+				title = props['name:en']
 				else
-					title = props.name; 
-			
+					title = props.name;
+
 			//filling the placecard values
 			if(props.wheelchair) {
 				value = accessibilityValues[props.wheelchair][l];
@@ -640,8 +656,8 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 				description = accessibilityDescriptions.unknown[l];
 				header.attr("class", "accessibility-unknown");
 				youCanHelp = true;
-			} 
-			
+			}
+
 			//getting the category
 			if(feature.layer.id == "accessibility_amenity") { category = props.amenity; }
 			if(feature.layer.id == "accessibility_tourism") { category = props.tourism; }
@@ -649,21 +665,21 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 
 			getPhoto("mapillary", photo, latLng);
 		}
-		
+
 		if(layer_modes[feature.layer.id].layout=="steps") {
 			title = lang.steps[l];
 			if(props.ramp == "yes") {
-				value = lang.limited[l]; 
+				value = lang.limited[l];
 				description = stepsDescriptions.limited[l];
-				header.attr("class", "accessibility-limited"); 
+				header.attr("class", "accessibility-limited");
 				}
 			if(props.ramp == "no") {
 				value = lang.notaccessible[l];
 				description = stepsDescriptions.no[l];
 				header.attr("class", "accessibility-no");
 			}
-			if(props.ramp == "") { 
-				value = lang.unknown[l]; 
+			if(props.ramp == "") {
+				value = lang.unknown[l];
 				description = stepsDescriptions.unknown[l];
 				youCanHelp = true;
 				header.attr("class", "accessibility-unknown");
@@ -672,9 +688,9 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 
 		if(layer_modes[feature.layer.id].layout=="cutting") {
 			title = lang.cutting[l];
-			value = lang.accessible[l]; 
+			value = lang.accessible[l];
 			description = stepsDescriptions.yes[l];
-			header.attr("class", "accessibility-yes"); 
+			header.attr("class", "accessibility-yes");
 		}
 
 
@@ -684,31 +700,31 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 			value =  props.level + ' ' + lang.db[l];
 			description = noiseDescriptions[props.category][l];
 			header.attr("class", "noise-"+props.category);
-			
+
 			photo.append("div")
 				.append("img")
 				.attr("src", props.image);
 		}
-		
+
 		//values for noise_streets
 		if(layer_modes[feature.layer.id].layout=="noise_streets") {
 			title = props.name;
 			value =  props.level + ' ' + lang.db[l];
 			description = noiseDescriptions[getNoiseCategory(props.level)][l];
 			header.attr("class", "noise-"+getNoiseCategory(props.level));
-			
-			
-			
+
+
+
 		}
 
 		//processing places data
 		if(layer_modes[feature.layer.id].layout=="places") {
 			value = props.name;
 			description = lang.seen[l] + ": " + props.seen;
-			
+
 			getPhoto("panoramio", photo, latLng);
-		}		
-		
+		}
+
 		//rendering title
 		header.append('div')
 			.attr("class", "header-title")
@@ -725,7 +741,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		header.append('div')
 			.attr("class", "header-value")
 			.text(value);
-		
+
 		header.append('div')
 			.attr("class", "header-description")
 			.text(description);
@@ -738,13 +754,13 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 			.attr("href", lang.youCanHelpUrl[l])
 			.attr("target", "_blank")
 			.text(lang.youCanHelpText[l]);
-		}		
-		
+		}
+
 		//rendering params
 		params.forEach(function(p,i) {
 			sidePanel.append('div').attr("class", "param-line").text(p.name + ": " + p.value);
 		});
-		
+
 	}
 
 	function getPhoto(mode,photoblock, latLng) {
@@ -753,25 +769,25 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 			mapboxgl.util.getJSON('http://api.mapillary.com/v1/im/close?lat='+ latLng.lat +'&lon=' + latLng.lng + '&distance=20', function(err, mapillary) {
 				if (err) throw err;
 				photoblock.text("");
-				
+
 				if(mapillary.length > 0) {
 					photoblock.text("");
 				}
-				
-				
+
+
 				mapillary.forEach(function(photo,i) {
 				photoblock.append('iframe')
 					.attr("src", "http://www.mapillary.com/jsapi/?image="+ photo.key + '&showMap=false')
 					.attr("width", "320")
 					.attr("height", "280");
 				});
-				
-		
+
+
 			});
 		}
-		
+
 		if(mode == "panoramio") {
-			
+
 			//getting photos
 			var myRequest = new panoramio.PhotoRequest({
 			  'rect': {'sw': {'lat': latLng.lat-0.001, 'lng': latLng.lng-0.001}, 'ne': {'lat': latLng.lat+0.001, 'lng': latLng.lng+0.001}}
@@ -782,19 +798,19 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 			  'height': 310,
 			  'croppedPhotos': true
 			};
-		
+
 			panoramio.Cropping.TO_FILL = true;
 			var widget = new panoramio.PhotoWidget('panelphoto', myRequest, myOptions);
 			widget.setPosition(0);
-			
-			
+
+
 		}
-		
+
 	}
 
 	function changeMode(mode) {
-		
-		//switching off the panel 
+
+		//switching off the panel
 		sidePanel.style({
 			display: "none"
 		});
@@ -813,21 +829,21 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 
 		} else {
 			map.removeClass(cm);
-			cm = "none"; //setting current mode	
+			cm = "none"; //setting current mode
 		}
-		
+
 		//setting the proper page title
 		if(cm != "none") {
 			document.title = lang.logo[l] + " — " + pageTitles[cm][l];
 		} else {
 			document.title = lang.logo[l];
 		}
-		
+
 		//setting URL params after mode changed
 		setState();
 
 	}
-	
+
 	function getSidewalkCategory(w) {
 		var cat;
 		if(w < 0.6) cat = "noone";
@@ -837,18 +853,18 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		if(w >= 2.4) cat = "four";
 		return cat;
 	}
-	
+
 	function getNoiseCategory(c) {
 		var cat;
 		if(c < 60) cat = "blue";
 		if(c>=60 && c < 70) cat = "green";
-		if(c>=70 && c < 80) cat = "orange";	
-		if(c>=80) cat = "red";	
+		if(c>=70 && c < 80) cat = "orange";
+		if(c>=80) cat = "red";
 		return cat;
 	}
-	
+
 	function getNoiseLevel(caption) {
-		var lvl; 
+		var lvl;
 		lvl = caption.replace(/\D/g,'');
 		return lvl;
 	}
@@ -856,7 +872,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 	function getTooltipHint(id, props) {
 		return id;
 	}
-	
+
 	function convertTime(time) {
 		var date = new Date(parseInt(time)*1000);
 		return(date.toString()); // Wed Jan 12 2011 12:42:46 GMT-0800 (PST)

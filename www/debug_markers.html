@@ -75,11 +75,10 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function (err, style) {
 			radius: 16
 		}, function(err, features) {
 			if (err) throw err;
-			if (getProperFeature(features)) {
+			if (isThereProperFeature(features)) {
 				d3.select(".mapboxgl-canvas").style({
 					cursor: "pointer"
 				});
-        console.log(features);
 			} else {
 				d3.select(".mapboxgl-canvas").style({
 					cursor: "-webkit-grab"
@@ -88,15 +87,34 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function (err, style) {
 		});
 	});
 
-  function getProperFeature(features) {
-		var index;
-		if(features.length > 0) {
+  map.on('click', function(e) {
+		map.featuresAt(e.point, {
+			radius: 16
+		}, function(err, features) {
+			if (err) throw err;
+			if (features.length>0) {
+//        console.log(features);
+          features.forEach(function(f,i){
+            console.log(layer_modes[f.layer.id]);
+          });
+			}
+		});
+	});
 
+  function isThereProperFeature(features) {
+		var index,
+    proper = false;
+		if(features.length > 0) {
+    //  console.log("features:");
 			features.forEach(function(f,i){
-				if(layer_modes[f.layer.id].mode == "places") index = i;
+				if(layer_modes[f.layer.id].mode == "places") {
+          index = i;
+          proper = true;
+        }
+        //console.log(f.layer.id);
 			});
 		}
-		if(index) return index;
+		return proper;
 	}
 
 });
