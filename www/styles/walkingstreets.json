@@ -81,7 +81,7 @@
     },
     "walkingstreets": {
         "type": "vector",
-        "url": "mapbox://minikarma.ad75f3c6"
+        "url": "mapbox://minikarma.46d99f02"
     }
   },
   "sprite": "sprites/walkstreets",
@@ -140,7 +140,7 @@
     "id": "accessibility_building_yes",
     "type": "fill",
     "source": "walkingstreets",
-    "source-layer": "osm_wheelchair",
+    "source-layer": "osm_wheelchair_area",
     "filter": ["all", ["==", "building", "yes"],["==", "wheelchair", "yes"], ["==", "$type", "Polygon"]],
   	"minzoom": 13,
   	"maxzoom": 22,
@@ -161,7 +161,7 @@
     "id": "accessibility_building_no",
     "type": "fill",
     "source": "walkingstreets",
-    "source-layer": "osm_wheelchair",
+    "source-layer": "osm_wheelchair_area",
     "filter": ["all", ["==", "building", "yes"],["==", "wheelchair", "no"], ["==", "$type", "Polygon"]],
   	"minzoom": 13,
   	"maxzoom": 22,
@@ -182,7 +182,7 @@
     "id": "accessibility_building_limited",
     "type": "fill",
     "source": "walkingstreets",
-    "source-layer": "osm_wheelchair",
+    "source-layer": "osm_wheelchair_area",
     "filter": ["all", ["==", "building", "yes"],["==", "wheelchair", "limited"], ["==", "$type", "Polygon"]],
   	"minzoom": 13,
   	"maxzoom": 22,
@@ -342,7 +342,7 @@
       "source": "walkingstreets",
       "source-layer": "osm_highway_pg",
       "interactive": true,
-       "filter": ["all", ["==", "width", ""],["in", "highway", "footway", "path", "pedestrian"], ["!=","footway", "crossing"], ["==", "$type", "LineString"]],
+       "filter": ["all", ["==", "width_num", "NULL"], ["in", "highway", "footway", "path", "pedestrian"], ["!=","footway", "crossing"], ["==", "$type", "LineString"]],
 	   "minzoom": 12,
 	  "layout": {
 		  "line-cap": "round",
@@ -809,7 +809,7 @@
     "id": "accessibility_building_labels",
     "type": "symbol",
     "source": "walkingstreets",
-    "source-layer": "osm_wheelchair",
+    "source-layer": "osm_wheelchair_area",
     "filter": ["all", ["==", "building", "yes"], ["!=", "wheelchair", ""], ["==", "$type", "Polygon"]],
     "layout": {
       "text-field": "@name_w",
@@ -944,7 +944,7 @@
     "source": "walkingstreets",
     "source-layer": "osm_wheelchair",
 	"interactive": true,
-    "filter": ["all", ["!=", "shop", ""], ["==", "$type", "Point"]],
+    "filter": ["all", ["!=", "shop", ""], ["==", "amenity", ""], ["==", "tourism", ""], ["==", "$type", "Point"]],
     "layout": {
       "visibility": "visible",
       "icon-image": {
