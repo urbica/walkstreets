@@ -15,6 +15,7 @@
     "@label-halo": "rgba(255,255,255,0.75)",
     "@road-major": "#F6F5F3",
     "@road-minor": "#F6F5F3",
+    "@cycleway": "#21CA8C",
     "@road-major-width": {
       "base": 1.4,
       "stops": [[6, 0.5], [20, 30]]
@@ -247,21 +248,6 @@
     "paint": {
       "line-color": "@road-major",
       "line-width": "@road-major-width"
-    }
-  }, {
-    "id": "cycleway",
-    "type": "line",
-    "source": "mapbox",
-    "source-layer": "road",
-    "filter": ["all", ["==", "class", "path"], ["==", "type", "cycleway"], ["==", "$type", "LineString"]],
-    "layout": {
-      "line-cap": "round",
-      "line-join": "round"
-    },
-    "paint": {
-      "line-opacity": 0,
-      "line-color": "#50CC50",
-      "line-width": 3
     }
   }, {
     "id": "bridge_minor_case",
@@ -579,7 +565,7 @@
       "source": "walkingstreets",
       "source-layer": "osm_steps",
 	  "interactive": true,
-      "filter": ["all", ["in", "highway", "steps"], ["in", "ramp", "", "NULL"], ["in", "layer", "-1", "", "0", "1", "2"], ["==", "$type", "LineString"]],
+      "filter": ["all", ["in", "highway", "steps"], ["in", "ramp", "", "NULL"], ["in", "layer", "-1", "", "0", "1", "2", ""], ["==", "$type", "LineString"]],
       "layout": {
 		  "line-cap": "round",
 		  "line-join": "round"
@@ -696,7 +682,7 @@
       "id": "sidewalks",
       "type": "line",
       "source": "walkingstreets",
-      "source-layer": "osm_highway_pg",
+      "source-layer": "osm_paths",
 	  "filter": ["all", ["in", "highway", "footway", "path", "pedestrian"], ["!=","footway", "crossing"], ["==", "$type", "LineString"]],
 	  "minzoom": 12,
 	  "layout": {
@@ -757,6 +743,52 @@
           "base": 1.5,
           "stops": [[12, 2], [18, 8]]
         }
+      }
+    },
+    {
+      "id": "cycleway_case",
+      "type": "line",
+      "source": "walkingstreets",
+      "source-layer": "osm_cycleway",
+	   "filter": ["all", ["in", "highway", "cycleway"], ["==", "$type", "LineString"]],
+	  "layout": {
+		  "line-cap": "round",
+		  "line-join": "round"
+	  },
+      "paint": {
+        "line-opacity": 0,
+        "line-color": "white",
+        "line-width": {
+          "base": 1.5,
+          "stops": [[10, 3], [18, 12]]
+        }
+      },
+      "paint.velo": {
+        "line-opacity": 1
+      }
+    },
+    {
+      "id": "cycleway",
+      "type": "line",
+      "source": "walkingstreets",
+      "source-layer": "osm_cycleway",
+      "interactive": true,
+	   "filter": ["all", ["in", "highway", "cycleway"], ["==", "$type", "LineString"]],
+	  "layout": {
+		  "line-cap": "round",
+		  "line-join": "round"
+	  },
+      "paint": {
+        "line-opacity": 0,
+        "line-color": "@cycleway",
+		    "line-dasharray": [2,2],
+        "line-width": {
+          "base": 1.5,
+          "stops": [[10, 2], [18, 8]]
+        }
+      },
+      "paint.velo": {
+        "line-opacity": 1
       }
     }, {
     "id": "road_minor_label",

@@ -32,7 +32,12 @@ var lang = {
 		en: "https://github.com/urbica/walkstreets/wiki/Contribute-the-project"
 	},
 	underConstruction: { ru: "На ремонте", en: "Under construction" },
-	underConstructionDescription: { ru: "Эта пешеходная дорожка сейчас на ремонте, планируйте прогулку альтернативным маршрутом.", en: "This path is under construction, extremely uncomfortable walk here, avoid." }
+	underConstructionDescription: { ru: "Эта пешеходная дорожка сейчас на ремонте, планируйте прогулку альтернативным маршрутом.", en: "This path is under construction, extremely uncomfortable walk here, avoid." },
+	cycleway: { ru: "Велодорожка", en: "Bike lane" },
+	lockedStation: { ru: ":-(", en: ":-(" },
+	lockedStationDescription: { ru: "Велостанция не работает", en: "Bike station is unavailable"},
+	available: { ru: "доступно", en: "available" },
+	totalPlaces: { ru: "Всего мест", en: "Total places" }
 };
 
 
@@ -52,13 +57,18 @@ var modes = [{
 	id: "places",
 	ru: "Популярные места",
 	en: "Popular places"
+}, {
+	id: "velo",
+	ru: "Велокарта",
+	en: "Bike map"
 }];
 
 var pageTitles = {
 	sidewalks: { ru: "Тротуары", en: "Sidewalks map" },
 	accessibility: { ru: "Доступность среды", en: "Accessibility map" },
 	noise: { ru: "Шум на улице", en: "Noise map" },
-	places: { ru: "Интересные места", en: "Interesting places" }
+	places: { ru: "Интересные места", en: "Interesting places" },
+	velo: { ru: "Велокарта", en: "Bike map" }
 };
 
 var layer_modes = {
@@ -89,7 +99,9 @@ var layer_modes = {
 	noisemap_red: { mode: "noise", layout: "noise_streets" },
 	wikipedia: { mode: "places", layout: "places" },
 	wikipedia_labels: { mode: "places", layout: "places" },
-	wikipedia_mini: { mode: "places", layout: "places" }
+	wikipedia_mini: { mode: "places", layout: "places" },
+	cycleway: { mode: "velo", layout: "cycleway" },
+	bike_points: { mode: "velo", layout: "bike_point"}
 };
 
 
@@ -488,7 +500,6 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
     };
 
 
-
   	  $.ajax({
   	      url: 'https://api.instagram.com/v1/tags/noisemap/media/recent?count=500&access_token=' + accessToken,
   	      dataType: 'jsonp',
@@ -496,7 +507,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
   	      data: {client_id: accessToken},
   	      success: function(data){
   				if(data.data.length > 0) {
-  	           	 	for(x in data.data){
+  	           	for(x in data.data){
   							if(data.data[x].location) {
 								noiseJSON.data.features.push({
 									"type": "Feature",
@@ -569,6 +580,96 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
   		});
 
 
+		//	http://velobike.ru/proxy/parkings/
+
+		/* VELOBIKES DATA */
+
+		var veloJSON = {
+	      "type": "geojson",
+	      "data": {
+	        "type": "FeatureCollection",
+	        "features": [
+					]
+	      }
+	    };
+
+		$.ajax({
+				url: 'http://velobike.ru/proxy/parkings/',
+				dataType: 'json',
+				type: 'GET',
+//				data: {client_id: accessToken},
+success: function(data){
+	console.log(data.Items);
+if(data.Items.length > 0) {
+			for(x in data.Items){
+			if(data.Items[x].Position) {
+			veloJSON.data.features.push({
+				"type": "Feature",
+								"geometry": {
+								"type": "Point",
+								"coordinates": [data.Items[x].Position.Lon, data.Items[x].Position.Lat]
+							},
+						"properties": {
+				"title": data.Items[x].Address,
+				"category": getVeloCategory(data.Items[x].FreePlaces, data.Items[x].TotalPlaces, data.Items[x].IsLocked),
+				"FreePlaces": data.Items[x].FreePlaces,
+				"Available": (data.Items[x].TotalPlaces - data.Items[x].FreePlaces),
+				"IsLocked": data.Items[x].IsLocked,
+				"TotalPlaces": data.Items[x].TotalPlaces
+						}
+});
+	}
+	}
+	map.addSource("veloMarkers", veloJSON);
+	map.addLayer({
+		"id": "bike_points",
+		"type": "symbol",
+		"source": "veloMarkers",
+	"interactive": true,
+	"layout": {
+			"visibility": "visible",
+			"icon-image": {
+					"stops": [
+						[
+							13,
+							"mini-velo-{category}"
+						],
+						[
+							14,
+							"velo-{category}"
+						]
+					]
+				},
+		"icon-allow-overlap": true,
+	"text-field": "{Available} / {TotalPlaces}",
+			"text-font": "Open Sans Bold",
+		"text-padding": 10,
+		"text-letter-spacing": 0.05,
+		"text-max-width": 5,
+			"text-line-height": 1.2,
+		"text-anchor": "top",
+		"text-offset": [0,1],
+		"text-allow-overlap": false,
+		"text-optional": true
+		},
+		"paint": {
+			"icon-opacity": 0,
+				"text-opacity": 0,
+				"text-color": "@label",
+				"text-size": 10
+		},
+		"paint.velo": {
+			"icon-opacity": 1,
+				"text-opacity": { "stops": [[13,0],[14,1]] },
+				"text-color": "@label",
+				"text-size": 10
+		}
+	});
+}
+},
+error: function(data){
+}
+			});
 
 
 	});
@@ -659,6 +760,8 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 			getPhoto("mapillary", photo, latLng);
 		}
 
+
+		//template for steps
 		if(layer_modes[feature.layer.id].layout=="steps") {
 			title = lang.steps[l];
 			if(props.ramp == "yes") {
@@ -677,6 +780,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 				youCanHelp = true;
 				header.attr("class", "accessibility-unknown");
 			}
+			getPhoto("mapillary", photo, latLng);
 		}
 
 		if(layer_modes[feature.layer.id].layout=="cutting") {
@@ -684,6 +788,28 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 			value = lang.accessible[l];
 			description = stepsDescriptions.yes[l];
 			header.attr("class", "accessibility-yes");
+		}
+
+		//templeate for cycleways
+		if(layer_modes[feature.layer.id].layout=="cycleway") {
+			title = lang.cycleway[l];
+			value = '';
+			description = '';
+			//getPhoto("mapillary", photo, latLng);
+		}
+
+		//templeate for cycleways
+		if(layer_modes[feature.layer.id].layout=="bike_point") {
+			title = props.title;
+			if(props.IsLocked) {
+				value = lang.lockedStation[l];
+				description = lang.lockedStationDescription[l];
+			} else {
+				value = (props.TotalPlaces-props.FreePlaces) + " " + lang.available[l];
+				description = props.TotalPlaces + " " + lang.totalPlaces[l];;
+			}
+
+			//getPhoto("mapillary", photo, latLng);
 		}
 
 
@@ -856,6 +982,16 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 		return cat;
 	}
 
+	function getVeloCategory(free, total, locked) {
+		var result = "grey";
+		var available = total - free;
+		if(locked) { result =  "grey"; } else {
+			if((available/total) <= 0.3) { result =  "red"; }
+			if((available/total) > 0.3) { result =  "yellow"; }
+			if((available/total) > 0.6) { result =  "green"; }
+		}
+		return result;
+	}
 	function getNoiseLevel(caption) {
 		var lvl;
 		lvl = caption.replace(/\D/g,'');
