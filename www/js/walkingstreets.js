@@ -986,8 +986,8 @@ error: function(data){
 		var result = "grey";
 		var available = total - free;
 		if(locked) { result =  "grey"; } else {
-			if((available/total) <= 0.3) { result =  "red"; }
-			if((available/total) > 0.3) { result =  "yellow"; }
+			if((available/total) <= 0.2) { result =  "red"; }
+			if((available/total) > 0.2) { result =  "yellow"; }
 			if((available/total) > 0.6) { result =  "green"; }
 		}
 		return result;
