@@ -599,7 +599,7 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 				type: 'GET',
 //				data: {client_id: accessToken},
 success: function(data){
-	console.log(data.Items);
+	//console.log(data.Items);
 if(data.Items.length > 0) {
 			for(x in data.Items){
 			if(data.Items[x].Position) {

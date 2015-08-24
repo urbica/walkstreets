@@ -15,7 +15,7 @@
     "@label-halo": "rgba(255,255,255,0.75)",
     "@road-major": "#F6F5F3",
     "@road-minor": "#F6F5F3",
-    "@cycleway": "#21CA8C",
+    "@cycleway": "#3998D0",
     "@road-major-width": {
       "base": 1.4,
       "stops": [[6, 0.5], [20, 30]]
