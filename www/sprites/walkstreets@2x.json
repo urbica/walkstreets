@@ -1,70 +1,70 @@
 {
   "amenity-wheelchair-": {
-    "x": 228,
-    "y": 118,
+    "x": 268,
+    "y": 38,
     "width": 32,
     "height": 32,
     "pixelRatio": 2,
     "sdf": false
   },
   "amenity-wheelchair-limited": {
-    "x": 268,
-    "y": 170,
+    "x": 272,
+    "y": 232,
     "width": 32,
     "height": 32,
     "pixelRatio": 2,
     "sdf": false
   },
   "amenity-wheelchair-no": {
-    "x": 144,
-    "y": 196,
+    "x": 268,
+    "y": 140,
     "width": 32,
     "height": 32,
     "pixelRatio": 2,
     "sdf": false
   },
   "amenity-wheelchair-yes": {
-    "x": 76,
-    "y": 196,
+    "x": 268,
+    "y": 72,
     "width": 32,
     "height": 32,
     "pixelRatio": 2,
     "sdf": false
   },
   "micro-amenity": {
-    "x": 302,
-    "y": 106,
+    "x": 230,
+    "y": 266,
     "width": 18,
     "height": 18,
     "pixelRatio": 2,
     "sdf": false
   },
   "micro-shop": {
-    "x": 302,
-    "y": 86,
+    "x": 210,
+    "y": 266,
     "width": 18,
     "height": 18,
     "pixelRatio": 2,
     "sdf": false
   },
   "micro-tourism": {
-    "x": 302,
-    "y": 66,
+    "x": 306,
+    "y": 272,
     "width": 18,
     "height": 18,
     "pixelRatio": 2,
     "sdf": false
   },
   "micro-wheelchair-": {
-    "x": 302,
-    "y": 168,
+    "x": 168,
+    "y": 154,
     "width": 12,
     "height": 12,
     "pixelRatio": 2,
     "sdf": false
   },
   "micro-wheelchair-limited": {
-    "x": 302,
+    "x": 154,
     "y": 154,
     "width": 12,
     "height": 12,
@@ -72,39 +72,39 @@
     "sdf": false
   },
   "micro-wheelchair-no": {
-    "x": 302,
-    "y": 140,
+    "x": 140,
+    "y": 154,
     "width": 12,
     "height": 12,
     "pixelRatio": 2,
     "sdf": false
   },
   "micro-wheelchair-yes": {
-    "x": 302,
-    "y": 126,
+    "x": 290,
+    "y": 208,
     "width": 12,
     "height": 12,
     "pixelRatio": 2,
     "sdf": false
   },
   "mini-amenity-wheelchair-": {
-    "x": 302,
-    "y": 22,
+    "x": 166,
+    "y": 266,
     "width": 20,
     "height": 20,
     "pixelRatio": 2,
     "sdf": false
   },
   "mini-amenity-wheelchair-limited": {
-    "x": 302,
-    "y": 0,
+    "x": 144,
+    "y": 266,
     "width": 20,
     "height": 20,
     "pixelRatio": 2,
     "sdf": false
   },
   "mini-amenity-wheelchair-no": {
-    "x": 270,
+    "x": 122,
     "y": 266,
     "width": 20,
     "height": 20,
@@ -112,62 +112,54 @@
     "sdf": false
   },
   "mini-amenity-wheelchair-yes": {
-    "x": 82,
-    "y": 172,
+    "x": 100,
+    "y": 266,
     "width": 20,
     "height": 20,
     "pixelRatio": 2,
     "sdf": false
   },
   "mini-noise-blue": {
-    "x": 56,
-    "y": 266,
+    "x": 306,
+    "y": 246,
     "width": 24,
     "height": 24,
     "pixelRatio": 2,
     "sdf": false
   },
   "mini-noise-green": {
-    "x": 82,
-    "y": 266,
+    "x": 306,
+    "y": 220,
     "width": 24,
     "height": 24,
     "pixelRatio": 2,
     "sdf": false
   },
   "mini-noise-orange": {
-    "x": 134,
-    "y": 266,
+    "x": 306,
+    "y": 194,
     "width": 24,
     "height": 24,
     "pixelRatio": 2,
     "sdf": false
   },
   "mini-noise-red": {
-    "x": 108,
-    "y": 266,
+    "x": 306,
+    "y": 168,
     "width": 24,
     "height": 24,
     "pixelRatio": 2,
     "sdf": false
   },
   "mini-shop-wheelchair-": {
-    "x": 246,
-    "y": 196,
+    "x": 188,
+    "y": 266,
     "width": 20,
     "height": 20,
     "pixelRatio": 2,
     "sdf": false
   },
   "mini-shop-wheelchair-limited": {
-    "x": 192,
-    "y": 172,
-    "width": 20,
-    "height": 20,
-    "pixelRatio": 2,
-    "sdf": false
-  },
-  "mini-shop-wheelchair-no": {
     "x": 170,
     "y": 172,
     "width": 20,
@@ -175,7 +167,7 @@
     "pixelRatio": 2,
     "sdf": false
   },
-  "mini-shop-wheelchair-yes": {
+  "mini-shop-wheelchair-no": {
     "x": 148,
     "y": 172,
     "width": 20,
@@ -183,7 +175,7 @@
     "pixelRatio": 2,
     "sdf": false
   },
-  "mini-tourism-wheelchair-": {
+  "mini-shop-wheelchair-yes": {
     "x": 126,
     "y": 172,
     "width": 20,
@@ -191,15 +183,7 @@
     "pixelRatio": 2,
     "sdf": false
   },
-  "mini-tourism-wheelchair-limited": {
-    "x": 248,
-    "y": 266,
-    "width": 20,
-    "height": 20,
-    "pixelRatio": 2,
-    "sdf": false
-  },
-  "mini-tourism-wheelchair-no": {
+  "mini-tourism-wheelchair-": {
     "x": 104,
     "y": 172,
     "width": 20,
@@ -207,8 +191,24 @@
     "pixelRatio": 2,
     "sdf": false
   },
+  "mini-tourism-wheelchair-limited": {
+    "x": 82,
+    "y": 172,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-tourism-wheelchair-no": {
+    "x": 268,
+    "y": 208,
+    "width": 20,
+    "height": 20,
+    "pixelRatio": 2,
+    "sdf": false
+  },
   "mini-tourism-wheelchair-yes": {
-    "x": 182,
+    "x": 78,
     "y": 266,
     "width": 20,
     "height": 20,
@@ -216,55 +216,71 @@
     "sdf": false
   },
   "mini-velo-green": {
-    "x": 28,
-    "y": 266,
+    "x": 306,
+    "y": 140,
     "width": 26,
     "height": 26,
     "pixelRatio": 2,
     "sdf": false
   },
   "mini-velo-grey": {
-    "x": 268,
-    "y": 230,
+    "x": 306,
+    "y": 0,
+    "width": 28,
+    "height": 26,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-velo-parking": {
+    "x": 306,
+    "y": 28,
     "width": 28,
     "height": 26,
     "pixelRatio": 2,
     "sdf": false
   },
   "mini-velo-red": {
-    "x": 0,
-    "y": 266,
+    "x": 306,
+    "y": 56,
+    "width": 26,
+    "height": 26,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "mini-velo-shop": {
+    "x": 306,
+    "y": 112,
     "width": 26,
     "height": 26,
     "pixelRatio": 2,
     "sdf": false
   },
   "mini-velo-yellow": {
-    "x": 238,
-    "y": 232,
+    "x": 306,
+    "y": 84,
     "width": 26,
     "height": 26,
     "pixelRatio": 2,
     "sdf": false
   },
   "mini-wheelchair-": {
-    "x": 302,
-    "y": 44,
+    "x": 246,
+    "y": 196,
     "width": 20,
     "height": 20,
     "pixelRatio": 2,
     "sdf": false
   },
   "mini-wheelchair-limited": {
-    "x": 160,
-    "y": 266,
+    "x": 192,
+    "y": 172,
     "width": 20,
     "height": 20,
     "pixelRatio": 2,
     "sdf": false
   },
   "mini-wheelchair-no": {
-    "x": 226,
+    "x": 34,
     "y": 266,
     "width": 20,
     "height": 20,
@@ -272,7 +288,7 @@
     "sdf": false
   },
   "mini-wheelchair-yes": {
-    "x": 204,
+    "x": 56,
     "y": 266,
     "width": 20,
     "height": 20,
@@ -288,46 +304,14 @@
     "sdf": false
   },
   "mosmetro": {
-    "x": 268,
-    "y": 204,
+    "x": 0,
+    "y": 266,
     "width": 32,
     "height": 24,
     "pixelRatio": 2,
     "sdf": false
   },
   "noise-blue": {
-    "x": 268,
-    "y": 102,
-    "width": 32,
-    "height": 32,
-    "pixelRatio": 2,
-    "sdf": false
-  },
-  "noise-green": {
-    "x": 268,
-    "y": 68,
-    "width": 32,
-    "height": 32,
-    "pixelRatio": 2,
-    "sdf": false
-  },
-  "noise-orange": {
-    "x": 268,
-    "y": 34,
-    "width": 32,
-    "height": 32,
-    "pixelRatio": 2,
-    "sdf": false
-  },
-  "noise-red": {
-    "x": 268,
-    "y": 0,
-    "width": 32,
-    "height": 32,
-    "pixelRatio": 2,
-    "sdf": false
-  },
-  "shop-wheelchair-": {
     "x": 204,
     "y": 232,
     "width": 32,
@@ -335,7 +319,7 @@
     "pixelRatio": 2,
     "sdf": false
   },
-  "shop-wheelchair-limited": {
+  "noise-green": {
     "x": 170,
     "y": 232,
     "width": 32,
@@ -343,7 +327,7 @@
     "pixelRatio": 2,
     "sdf": false
   },
-  "shop-wheelchair-no": {
+  "noise-orange": {
     "x": 136,
     "y": 232,
     "width": 32,
@@ -351,7 +335,7 @@
     "pixelRatio": 2,
     "sdf": false
   },
-  "shop-wheelchair-yes": {
+  "noise-red": {
     "x": 102,
     "y": 232,
     "width": 32,
@@ -359,7 +343,7 @@
     "pixelRatio": 2,
     "sdf": false
   },
-  "tourism-wheelchair-": {
+  "shop-wheelchair-": {
     "x": 68,
     "y": 232,
     "width": 32,
@@ -367,7 +351,7 @@
     "pixelRatio": 2,
     "sdf": false
   },
-  "tourism-wheelchair-limited": {
+  "shop-wheelchair-limited": {
     "x": 34,
     "y": 232,
     "width": 32,
@@ -375,7 +359,7 @@
     "pixelRatio": 2,
     "sdf": false
   },
-  "tourism-wheelchair-no": {
+  "shop-wheelchair-no": {
     "x": 0,
     "y": 232,
     "width": 32,
@@ -383,7 +367,7 @@
     "pixelRatio": 2,
     "sdf": false
   },
-  "tourism-wheelchair-yes": {
+  "shop-wheelchair-yes": {
     "x": 212,
     "y": 196,
     "width": 32,
@@ -391,9 +375,41 @@
     "pixelRatio": 2,
     "sdf": false
   },
+  "tourism-wheelchair-": {
+    "x": 178,
+    "y": 196,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "tourism-wheelchair-limited": {
+    "x": 144,
+    "y": 196,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "tourism-wheelchair-no": {
+    "x": 110,
+    "y": 196,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "tourism-wheelchair-yes": {
+    "x": 76,
+    "y": 196,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
   "velo-green": {
-    "x": 228,
-    "y": 40,
+    "x": 180,
+    "y": 114,
     "width": 38,
     "height": 38,
     "pixelRatio": 2,
@@ -401,15 +417,31 @@
   },
   "velo-grey": {
     "x": 228,
-    "y": 0,
+    "y": 120,
+    "width": 38,
+    "height": 38,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "velo-parking": {
+    "x": 228,
+    "y": 80,
     "width": 38,
     "height": 38,
     "pixelRatio": 2,
     "sdf": false
   },
   "velo-red": {
-    "x": 180,
-    "y": 114,
+    "x": 228,
+    "y": 40,
+    "width": 38,
+    "height": 38,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "velo-shop": {
+    "x": 228,
+    "y": 0,
     "width": 38,
     "height": 38,
     "pixelRatio": 2,
@@ -424,6 +456,14 @@
     "sdf": false
   },
   "wheelchair-": {
+    "x": 238,
+    "y": 232,
+    "width": 32,
+    "height": 32,
+    "pixelRatio": 2,
+    "sdf": false
+  },
+  "wheelchair-limited": {
     "x": 42,
     "y": 196,
     "width": 32,
@@ -431,33 +471,25 @@
     "pixelRatio": 2,
     "sdf": false
   },
-  "wheelchair-limited": {
-    "x": 228,
-    "y": 152,
-    "width": 32,
-    "height": 32,
-    "pixelRatio": 2,
-    "sdf": false
-  },
   "wheelchair-no": {
-    "x": 268,
-    "y": 136,
+    "x": 228,
+    "y": 160,
     "width": 32,
     "height": 32,
     "pixelRatio": 2,
     "sdf": false
   },
   "wheelchair-yes": {
-    "x": 178,
-    "y": 196,
+    "x": 268,
+    "y": 174,
     "width": 32,
     "height": 32,
     "pixelRatio": 2,
     "sdf": false
   },
   "wikipedia-rank-1": {
-    "x": 228,
-    "y": 80,
+    "x": 268,
+    "y": 0,
     "width": 36,
     "height": 36,
     "pixelRatio": 2,
@@ -496,8 +528,8 @@
     "sdf": false
   },
   "wikipedia": {
-    "x": 110,
-    "y": 196,
+    "x": 268,
+    "y": 106,
     "width": 32,
     "height": 32,
     "pixelRatio": 2,

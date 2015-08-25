@@ -565,7 +565,7 @@
       "source": "walkingstreets",
       "source-layer": "osm_steps",
 	  "interactive": true,
-      "filter": ["all", ["in", "highway", "steps"], ["in", "ramp", "", "NULL"], ["in", "layer", "-1", "", "0", "1", "2", ""], ["==", "$type", "LineString"]],
+      "filter": ["all", ["in", "highway", "steps"], ["in", "ramp", "", "NULL"], ["==", "$type", "LineString"]],
       "layout": {
 		  "line-cap": "round",
 		  "line-join": "round"
@@ -589,7 +589,7 @@
       "source": "walkingstreets",
       "source-layer": "osm_steps",
 	  "interactive": true,
-      "filter": ["all", ["in", "highway", "steps"], ["in", "ramp", "no"], ["in", "layer", "-1", "", "0"], ["==", "$type", "LineString"]],
+      "filter": ["all", ["in", "highway", "steps"], ["==", "ramp", "no"], ["==", "$type", "LineString"]],
       "layout": {
 		  "line-cap": "round",
 		  "line-join": "round"
@@ -632,11 +632,11 @@
       }
     },
     {
-      "id": "cutting",
+      "id": "footway_incline",
       "type": "line",
       "source": "walkingstreets",
-      "source-layer": "osm_cutting",
-      "filter": ["all", ["==", "cutting", "yes"], ["==", "$type", "LineString"]],
+      "source-layer": "osm_paths",
+      "filter": ["all", ["in", "highway", "footway", "path"], ["in", "incline", "up", "down", "yes"], ["==", "$type", "LineString"]],
 	  "interactive": true,
       "layout": {
 		  "line-cap": "round",
@@ -1081,18 +1081,18 @@
     "type": "symbol",
     "source": "walkingstreets",
     "source-layer": "wikipedia",
-	"interactive": true,
+	  "interactive": true,
     "filter": ["all", ["==", "$type", "Point"]],
     "layout": {
-      "visibility": "visible",
-      "icon-image": "wikipedia-rank-{myRank}",
-      "icon-allow-overlap": true,
-      "text-field": "{name}",
-      "text-font": "Open Sans Bold",
-      "text-padding": 10,
-      "text-letter-spacing": 0.05,
-      "text-max-width": 5,
-      "text-line-height": 1.2,
+    "visibility": "visible",
+    "icon-image": "wikipedia-rank-{myRank}",
+    "icon-allow-overlap": true,
+    "text-field": "{name}",
+    "text-font": "Open Sans Bold",
+    "text-padding": 10,
+    "text-letter-spacing": 0.05,
+    "text-max-width": 5,
+    "text-line-height": 1.2,
 	  "text-anchor": "top",
 	  "text-offset": [0,1],
 	  "text-allow-overlap": false,
@@ -1117,11 +1117,84 @@
       "text-color": "@label",
       "text-size": 10
     }
-  },  {
-    "id": "area_district",
-    "type": "line",
-    "source": "walkingstreets",
-    "source-layer": "area",
+  },
+  {
+  "id": "bike_parkings",
+	"type": "symbol",
+	"source": "walkingstreets",
+  "source-layer": "osm_bike_amenities",
+  "filter": ["all", ["==", "amenity", "bicycle_parking"], ["==", "$type", "Point"]],
+	"interactive": true,
+	"layout": {
+			"visibility": "visible",
+			"icon-image": "mini-velo-parking",
+		"icon-allow-overlap": true
+		},
+		"paint": {
+			"icon-opacity": 0,
+      "icon-size": {
+      "base": 1,
+            "stops": [
+              [12,0.5],
+              [14,1]
+            ]
+      }
+		},
+		"paint.velo": {
+			"icon-opacity": 1
+		}
+  },
+  {
+  "id": "bike_shops",
+	"type": "symbol",
+	"source": "walkingstreets",
+  "source-layer": "osm_bike_amenities",
+  "filter": ["all", ["==", "shop", "bicycle"], ["==", "$type", "Point"]],
+	"interactive": true,
+	"layout": {
+			"visibility": "visible",
+			"icon-image": {
+					"stops": [
+						[
+							13,
+							"mini-velo-shop"
+						],
+						[
+							14,
+							"velo-shop"
+						]
+					]
+				},
+		"icon-allow-overlap": true,
+	  "text-field": "{name}",
+		"text-font": "Open Sans Bold",
+		"text-padding": 10,
+		"text-letter-spacing": 0.05,
+		"text-max-width": 5,
+		"text-line-height": 1.2,
+		"text-anchor": "top",
+		"text-offset": [0,1],
+		"text-allow-overlap": true,
+		"text-optional": true
+		},
+		"paint": {
+			"icon-opacity": 0,
+				"text-opacity": 0,
+				"text-color": "@label",
+				"text-size": 10
+		},
+		"paint.velo": {
+			"icon-opacity": 1,
+				"text-opacity": { "stops": [[13,0],[14,1]] },
+				"text-color": "@label",
+				"text-size": 10
+		}
+  },
+  {
+  "id": "area_district",
+  "type": "line",
+  "source": "walkingstreets",
+  "source-layer": "area",
 	"interactive": false,
     "paint": {
   	  "line-color": "@label",

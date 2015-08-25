@@ -1,173 +1,93 @@
 {
   "amenity-wheelchair-": {
-    "x": 116,
-    "y": 62,
+    "x": 137,
+    "y": 20,
     "width": 16,
     "height": 16,
     "pixelRatio": 1,
     "sdf": false
   },
   "amenity-wheelchair-limited": {
-    "x": 137,
-    "y": 90,
+    "x": 18,
+    "y": 137,
     "width": 16,
     "height": 16,
     "pixelRatio": 1,
     "sdf": false
   },
   "amenity-wheelchair-no": {
-    "x": 76,
-    "y": 100,
+    "x": 137,
+    "y": 74,
     "width": 16,
     "height": 16,
     "pixelRatio": 1,
     "sdf": false
   },
   "amenity-wheelchair-yes": {
-    "x": 40,
-    "y": 100,
+    "x": 137,
+    "y": 38,
     "width": 16,
     "height": 16,
     "pixelRatio": 1,
     "sdf": false
   },
   "micro-amenity": {
-    "x": 155,
-    "y": 94,
+    "x": 11,
+    "y": 155,
     "width": 9,
     "height": 9,
     "pixelRatio": 1,
     "sdf": false
   },
   "micro-shop": {
-    "x": 155,
-    "y": 83,
+    "x": 0,
+    "y": 155,
     "width": 9,
     "height": 9,
     "pixelRatio": 1,
     "sdf": false
   },
   "micro-tourism": {
-    "x": 155,
-    "y": 72,
+    "x": 144,
+    "y": 119,
     "width": 9,
     "height": 9,
     "pixelRatio": 1,
     "sdf": false
   },
   "micro-wheelchair-": {
-    "x": 155,
-    "y": 129,
+    "x": 80,
+    "y": 79,
     "width": 6,
     "height": 6,
     "pixelRatio": 1,
     "sdf": false
   },
   "micro-wheelchair-limited": {
-    "x": 155,
-    "y": 121,
+    "x": 72,
+    "y": 79,
     "width": 6,
     "height": 6,
     "pixelRatio": 1,
     "sdf": false
   },
   "micro-wheelchair-no": {
-    "x": 155,
-    "y": 113,
+    "x": 145,
+    "y": 110,
     "width": 6,
     "height": 6,
     "pixelRatio": 1,
     "sdf": false
   },
   "micro-wheelchair-yes": {
-    "x": 155,
-    "y": 105,
+    "x": 137,
+    "y": 110,
     "width": 6,
     "height": 6,
     "pixelRatio": 1,
     "sdf": false
   },
   "mini-amenity-wheelchair-": {
-    "x": 155,
-    "y": 48,
-    "width": 10,
-    "height": 10,
-    "pixelRatio": 1,
-    "sdf": false
-  },
-  "mini-amenity-wheelchair-limited": {
-    "x": 155,
-    "y": 36,
-    "width": 10,
-    "height": 10,
-    "pixelRatio": 1,
-    "sdf": false
-  },
-  "mini-amenity-wheelchair-no": {
-    "x": 155,
-    "y": 24,
-    "width": 10,
-    "height": 10,
-    "pixelRatio": 1,
-    "sdf": false
-  },
-  "mini-amenity-wheelchair-yes": {
-    "x": 42,
-    "y": 88,
-    "width": 10,
-    "height": 10,
-    "pixelRatio": 1,
-    "sdf": false
-  },
-  "mini-noise-blue": {
-    "x": 45,
-    "y": 137,
-    "width": 12,
-    "height": 12,
-    "pixelRatio": 1,
-    "sdf": false
-  },
-  "mini-noise-green": {
-    "x": 59,
-    "y": 137,
-    "width": 12,
-    "height": 12,
-    "pixelRatio": 1,
-    "sdf": false
-  },
-  "mini-noise-orange": {
-    "x": 87,
-    "y": 137,
-    "width": 12,
-    "height": 12,
-    "pixelRatio": 1,
-    "sdf": false
-  },
-  "mini-noise-red": {
-    "x": 73,
-    "y": 137,
-    "width": 12,
-    "height": 12,
-    "pixelRatio": 1,
-    "sdf": false
-  },
-  "mini-shop-wheelchair-": {
-    "x": 101,
-    "y": 137,
-    "width": 10,
-    "height": 10,
-    "pixelRatio": 1,
-    "sdf": false
-  },
-  "mini-shop-wheelchair-limited": {
-    "x": 102,
-    "y": 88,
-    "width": 10,
-    "height": 10,
-    "pixelRatio": 1,
-    "sdf": false
-  },
-  "mini-shop-wheelchair-no": {
     "x": 90,
     "y": 88,
     "width": 10,
@@ -175,7 +95,7 @@
     "pixelRatio": 1,
     "sdf": false
   },
-  "mini-shop-wheelchair-yes": {
+  "mini-amenity-wheelchair-limited": {
     "x": 78,
     "y": 88,
     "width": 10,
@@ -183,7 +103,7 @@
     "pixelRatio": 1,
     "sdf": false
   },
-  "mini-tourism-wheelchair-": {
+  "mini-amenity-wheelchair-no": {
     "x": 66,
     "y": 88,
     "width": 10,
@@ -191,15 +111,7 @@
     "pixelRatio": 1,
     "sdf": false
   },
-  "mini-tourism-wheelchair-limited": {
-    "x": 155,
-    "y": 12,
-    "width": 10,
-    "height": 10,
-    "pixelRatio": 1,
-    "sdf": false
-  },
-  "mini-tourism-wheelchair-no": {
+  "mini-amenity-wheelchair-yes": {
     "x": 54,
     "y": 88,
     "width": 10,
@@ -207,16 +119,104 @@
     "pixelRatio": 1,
     "sdf": false
   },
-  "mini-tourism-wheelchair-yes": {
-    "x": 125,
+  "mini-noise-blue": {
+    "x": 157,
+    "y": 14,
+    "width": 12,
+    "height": 12,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "mini-noise-green": {
+    "x": 157,
+    "y": 0,
+    "width": 12,
+    "height": 12,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "mini-noise-orange": {
+    "x": 142,
     "y": 137,
+    "width": 12,
+    "height": 12,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "mini-noise-red": {
+    "x": 128,
+    "y": 137,
+    "width": 12,
+    "height": 12,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "mini-shop-wheelchair-": {
+    "x": 102,
+    "y": 88,
+    "width": 10,
+    "height": 10,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "mini-shop-wheelchair-limited": {
+    "x": 157,
+    "y": 88,
+    "width": 10,
+    "height": 10,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "mini-shop-wheelchair-no": {
+    "x": 157,
+    "y": 76,
+    "width": 10,
+    "height": 10,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "mini-shop-wheelchair-yes": {
+    "x": 157,
+    "y": 64,
+    "width": 10,
+    "height": 10,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "mini-tourism-wheelchair-": {
+    "x": 157,
+    "y": 52,
+    "width": 10,
+    "height": 10,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "mini-tourism-wheelchair-limited": {
+    "x": 157,
+    "y": 40,
+    "width": 10,
+    "height": 10,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "mini-tourism-wheelchair-no": {
+    "x": 157,
+    "y": 28,
+    "width": 10,
+    "height": 10,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "mini-tourism-wheelchair-yes": {
+    "x": 42,
+    "y": 88,
     "width": 10,
     "height": 10,
     "pixelRatio": 1,
     "sdf": false
   },
   "mini-velo-green": {
-    "x": 30,
+    "x": 113,
     "y": 137,
     "width": 13,
     "height": 13,
@@ -224,15 +224,31 @@
     "sdf": false
   },
   "mini-velo-grey": {
-    "x": 137,
-    "y": 122,
+    "x": 36,
+    "y": 137,
+    "width": 14,
+    "height": 13,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "mini-velo-parking": {
+    "x": 52,
+    "y": 137,
     "width": 14,
     "height": 13,
     "pixelRatio": 1,
     "sdf": false
   },
   "mini-velo-red": {
-    "x": 15,
+    "x": 68,
+    "y": 137,
+    "width": 13,
+    "height": 13,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "mini-velo-shop": {
+    "x": 98,
     "y": 137,
     "width": 13,
     "height": 13,
@@ -240,7 +256,7 @@
     "sdf": false
   },
   "mini-velo-yellow": {
-    "x": 0,
+    "x": 83,
     "y": 137,
     "width": 13,
     "height": 13,
@@ -248,32 +264,32 @@
     "sdf": false
   },
   "mini-wheelchair-": {
-    "x": 155,
-    "y": 60,
+    "x": 157,
+    "y": 112,
     "width": 10,
     "height": 10,
     "pixelRatio": 1,
     "sdf": false
   },
   "mini-wheelchair-limited": {
-    "x": 113,
-    "y": 137,
+    "x": 157,
+    "y": 100,
     "width": 10,
     "height": 10,
     "pixelRatio": 1,
     "sdf": false
   },
   "mini-wheelchair-no": {
-    "x": 155,
-    "y": 0,
+    "x": 157,
+    "y": 124,
     "width": 10,
     "height": 10,
     "pixelRatio": 1,
     "sdf": false
   },
   "mini-wheelchair-yes": {
-    "x": 137,
-    "y": 137,
+    "x": 157,
+    "y": 136,
     "width": 10,
     "height": 10,
     "pixelRatio": 1,
@@ -288,46 +304,22 @@
     "sdf": false
   },
   "mosmetro": {
-    "x": 137,
-    "y": 108,
+    "x": 116,
+    "y": 84,
     "width": 16,
     "height": 12,
     "pixelRatio": 1,
     "sdf": false
   },
   "noise-blue": {
-    "x": 137,
-    "y": 54,
+    "x": 126,
+    "y": 119,
     "width": 16,
     "height": 16,
     "pixelRatio": 1,
     "sdf": false
   },
   "noise-green": {
-    "x": 137,
-    "y": 36,
-    "width": 16,
-    "height": 16,
-    "pixelRatio": 1,
-    "sdf": false
-  },
-  "noise-orange": {
-    "x": 137,
-    "y": 18,
-    "width": 16,
-    "height": 16,
-    "pixelRatio": 1,
-    "sdf": false
-  },
-  "noise-red": {
-    "x": 137,
-    "y": 0,
-    "width": 16,
-    "height": 16,
-    "pixelRatio": 1,
-    "sdf": false
-  },
-  "shop-wheelchair-": {
     "x": 108,
     "y": 119,
     "width": 16,
@@ -335,7 +327,7 @@
     "pixelRatio": 1,
     "sdf": false
   },
-  "shop-wheelchair-limited": {
+  "noise-orange": {
     "x": 90,
     "y": 119,
     "width": 16,
@@ -343,7 +335,7 @@
     "pixelRatio": 1,
     "sdf": false
   },
-  "shop-wheelchair-no": {
+  "noise-red": {
     "x": 72,
     "y": 119,
     "width": 16,
@@ -351,7 +343,7 @@
     "pixelRatio": 1,
     "sdf": false
   },
-  "shop-wheelchair-yes": {
+  "shop-wheelchair-": {
     "x": 54,
     "y": 119,
     "width": 16,
@@ -359,7 +351,7 @@
     "pixelRatio": 1,
     "sdf": false
   },
-  "tourism-wheelchair-": {
+  "shop-wheelchair-limited": {
     "x": 36,
     "y": 119,
     "width": 16,
@@ -367,7 +359,7 @@
     "pixelRatio": 1,
     "sdf": false
   },
-  "tourism-wheelchair-limited": {
+  "shop-wheelchair-no": {
     "x": 18,
     "y": 119,
     "width": 16,
@@ -375,7 +367,7 @@
     "pixelRatio": 1,
     "sdf": false
   },
-  "tourism-wheelchair-no": {
+  "shop-wheelchair-yes": {
     "x": 0,
     "y": 119,
     "width": 16,
@@ -383,7 +375,7 @@
     "pixelRatio": 1,
     "sdf": false
   },
-  "tourism-wheelchair-yes": {
+  "tourism-wheelchair-": {
     "x": 112,
     "y": 100,
     "width": 16,
@@ -391,9 +383,33 @@
     "pixelRatio": 1,
     "sdf": false
   },
+  "tourism-wheelchair-limited": {
+    "x": 94,
+    "y": 100,
+    "width": 16,
+    "height": 16,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "tourism-wheelchair-no": {
+    "x": 76,
+    "y": 100,
+    "width": 16,
+    "height": 16,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "tourism-wheelchair-yes": {
+    "x": 58,
+    "y": 100,
+    "width": 16,
+    "height": 16,
+    "pixelRatio": 1,
+    "sdf": false
+  },
   "velo-green": {
-    "x": 116,
-    "y": 21,
+    "x": 93,
+    "y": 58,
     "width": 19,
     "height": 19,
     "pixelRatio": 1,
@@ -401,15 +417,31 @@
   },
   "velo-grey": {
     "x": 116,
-    "y": 0,
+    "y": 63,
+    "width": 19,
+    "height": 19,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "velo-parking": {
+    "x": 116,
+    "y": 42,
     "width": 19,
     "height": 19,
     "pixelRatio": 1,
     "sdf": false
   },
   "velo-red": {
-    "x": 93,
-    "y": 58,
+    "x": 116,
+    "y": 21,
+    "width": 19,
+    "height": 19,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "velo-shop": {
+    "x": 116,
+    "y": 0,
     "width": 19,
     "height": 19,
     "pixelRatio": 1,
@@ -424,6 +456,22 @@
     "sdf": false
   },
   "wheelchair-": {
+    "x": 0,
+    "y": 137,
+    "width": 16,
+    "height": 16,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "wheelchair-limited": {
+    "x": 40,
+    "y": 100,
+    "width": 16,
+    "height": 16,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "wheelchair-no": {
     "x": 22,
     "y": 100,
     "width": 16,
@@ -431,33 +479,17 @@
     "pixelRatio": 1,
     "sdf": false
   },
-  "wheelchair-limited": {
-    "x": 116,
-    "y": 80,
-    "width": 16,
-    "height": 16,
-    "pixelRatio": 1,
-    "sdf": false
-  },
-  "wheelchair-no": {
-    "x": 137,
-    "y": 72,
-    "width": 16,
-    "height": 16,
-    "pixelRatio": 1,
-    "sdf": false
-  },
   "wheelchair-yes": {
-    "x": 94,
-    "y": 100,
+    "x": 137,
+    "y": 92,
     "width": 16,
     "height": 16,
     "pixelRatio": 1,
     "sdf": false
   },
   "wikipedia-rank-1": {
-    "x": 116,
-    "y": 42,
+    "x": 137,
+    "y": 0,
     "width": 18,
     "height": 18,
     "pixelRatio": 1,
@@ -496,8 +528,8 @@
     "sdf": false
   },
   "wikipedia": {
-    "x": 58,
-    "y": 100,
+    "x": 137,
+    "y": 56,
     "width": 16,
     "height": 16,
     "pixelRatio": 1,

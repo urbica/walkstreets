@@ -15,7 +15,7 @@ var lang = {
 	path: { ru: "Пешеходная дорожка", en: "Path"},
 	pedestrian: { ru: "Пешеходная улица", en: "Pedestrian street"},
 	steps: { ru: "Лестница", en: "Steps" },
-	cutting: { ru: "Наклонный сьезд", en: "Cutting" },
+	cutting: { ru: "Путь без ступенек", en: "Stepless path" },
 	crossing: { ru: "Пешеходный переход", en: "Crossing" },
 	width: { ru: "Ширина", en: "Width"},
 	surface: { ru: "Тип покрытия", en: "Surface" },
@@ -37,7 +37,9 @@ var lang = {
 	lockedStation: { ru: ":-(", en: ":-(" },
 	lockedStationDescription: { ru: "Велостанция не работает", en: "Bike station is unavailable"},
 	available: { ru: "доступно", en: "available" },
-	totalPlaces: { ru: "Всего мест", en: "Total places" }
+	totalPlaces: { ru: "Всего мест", en: "Total places" },
+	bike_parking: { ru: "Велопарковка", en: "Bike parking"},
+	bike_shop: { ru: "Веломагазин", en: "Bycycle shop"}
 };
 
 
@@ -89,7 +91,7 @@ var layer_modes = {
 	steps_ramp: { mode: "accessibility", layout: "steps" },
 	steps_no_ramp: { mode: "accessibility", layout: "steps" },
 	steps_unknown: { mode: "accessibility", layout: "steps" },
-	cutting: { mode: "accessibility", layout: "cutting" },
+	footway_incline: { mode: "accessibility", layout: "footway_incline" },
 	noise: { mode: "noise", layout: "noise" },
 	noise_labels: { mode: "noise", layout: "noise" },
 	noise_online: { mode: "noise", layout: "noise" },
@@ -101,7 +103,9 @@ var layer_modes = {
 	wikipedia_labels: { mode: "places", layout: "places" },
 	wikipedia_mini: { mode: "places", layout: "places" },
 	cycleway: { mode: "velo", layout: "cycleway" },
-	bike_points: { mode: "velo", layout: "bike_point"}
+	bike_points: { mode: "velo", layout: "bike_point"},
+	bike_shops: { mode: "velo", layout: "bike_shop"},
+	bike_parkings: { mode: "velo", layout: "bike_parking"}
 };
 
 
@@ -646,7 +650,7 @@ if(data.Items.length > 0) {
 		"text-padding": 10,
 		"text-letter-spacing": 0.05,
 		"text-max-width": 5,
-			"text-line-height": 1.2,
+		"text-line-height": 1.2,
 		"text-anchor": "top",
 		"text-offset": [0,1],
 		"text-allow-overlap": false,
@@ -764,6 +768,8 @@ error: function(data){
 		//template for steps
 		if(layer_modes[feature.layer.id].layout=="steps") {
 			title = lang.steps[l];
+			console.log(props.ramp);
+
 			if(props.ramp == "yes") {
 				value = lang.limited[l];
 				description = stepsDescriptions.limited[l];
@@ -783,7 +789,7 @@ error: function(data){
 			getPhoto("mapillary", photo, latLng);
 		}
 
-		if(layer_modes[feature.layer.id].layout=="cutting") {
+		if(layer_modes[feature.layer.id].layout=="footway_incline") {
 			title = lang.cutting[l];
 			value = lang.accessible[l];
 			description = stepsDescriptions.yes[l];
@@ -801,17 +807,26 @@ error: function(data){
 		//templeate for cycleways
 		if(layer_modes[feature.layer.id].layout=="bike_point") {
 			title = props.title;
+			header.attr("class", "bikeshare-"+props.category);
 			if(props.IsLocked) {
 				value = lang.lockedStation[l];
 				description = lang.lockedStationDescription[l];
 			} else {
 				value = (props.TotalPlaces-props.FreePlaces) + " " + lang.available[l];
-				description = props.TotalPlaces + " " + lang.totalPlaces[l];;
+				description = lang.totalPlaces[l] + ": " + props.TotalPlaces;
 			}
 
 			//getPhoto("mapillary", photo, latLng);
 		}
 
+		if(layer_modes[feature.layer.id].layout=="bike_shop") {
+			title = props.name;
+			description = lang.bike_shop[l];
+		}
+
+		if(layer_modes[feature.layer.id].layout=="bike_parking") {
+			title = lang.bike_parking[l];
+		}
 
 		//template for noise points
 		if(layer_modes[feature.layer.id].layout=="noise") {

@@ -31,7 +31,7 @@ a:hover {
 	height: 40px;
 	z-index: 9999;
 	box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.2);
-	background: #fff; 
+	background: #fff;
 	cursor: pointer;
 }
 
@@ -168,7 +168,7 @@ a:hover {
 	padding: 20px;
 	color: black;
 }
-		
+
 #panelphoto {
 	padding: 0;
 	text-align: center;
@@ -189,7 +189,7 @@ a:hover {
 	border: none;
 	display: block;
 }
-		
+
 .header-title {
 	font-size: 24px;
 	text-align: center;
@@ -219,16 +219,16 @@ a:hover {
 	color: black;
 }
 
-.sidewalk-noone, .accessibility-no, .noise-red {
+.sidewalk-noone, .accessibility-no, .noise-red, .bikeshare-red {
 	background: rgba(176,26,26,0.8);
 }
 .sidewalk-alone {
 	background: rgba(237,122,23,0.8);
 }
-.sidewalk-two, .accessibility-limited, .noise-orange {
+.sidewalk-two, .accessibility-limited, .noise-orange, .bikeshare-yellow {
 	background: rgba(246,197,42,0.8);
 }
-.sidewalk-three, .accessibility-yes, .noise-green {
+.sidewalk-three, .accessibility-yes, .noise-green, .bikeshare-green {
 	background: rgba(125,214,135,0.8);
 }
 .sidewalk-four, .noise-blue {
@@ -240,7 +240,7 @@ a:hover {
 .sidewalk-unknown > .header-value,
 .accessibility-unknown > .header-value,
 .sidewalk-construction > .header-value   {
-	
+
 }
 
 .sidewalk-construction {
@@ -330,11 +330,11 @@ a:hover {
 		display: none;
 		top: 50px;
 	}
-	
+
 	#layersBtn {
 		display: block;
 	}
-	
+
 	#welcome-screen,  #disqus-screen, #notsupported-screen {
 		display: none;
 		position: absolute;
@@ -348,23 +348,23 @@ a:hover {
 		z-index: 191919199;
 		background: #fff;
 	}
-	
-	
+
+
 	#panelphoto {
 		display: none;
 	}
-	
+
 	#sidepanel {
 		left: 0;
 		bottom: 0;
 		width: 100%;
 	}
-	
+
 	#head {
 		height: 40px;
-		
+
 	}
-	
+
 	#head-logo {
 		font-size: 0px;
 		line-height: 40px;
@@ -372,7 +372,7 @@ a:hover {
 		margin-left: 10px;
 		background: url('img/walking-man-mini.svg') 0px center  no-repeat;
 	}
-	
+
 	#head-right {
 		margin-right: 0px;
 		line-height: 40px;
@@ -380,10 +380,10 @@ a:hover {
 	#head-disqus, #head-share {
 		display: none;
 	}
-	
+
 	#head-about, #head-lang {
 		line-height: 40px;
 		margin: 0px 10px;
-		
+
 	}
 }
