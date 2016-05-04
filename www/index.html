@@ -7,7 +7,9 @@
 	<meta property="og:title" content="Walking Streets" />
     <title>Walking Streets</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://npmcdn.com/mapillary-js@0.0.5/dist/mapillary-js.min.css">
+  <script src="https://npmcdn.com/mapillary-js@0.0.5/dist/mapillary-js.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="http://www.panoramio.com/wapi/wapi.js?v=1&amp;hl=ru"></script>
 	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 	<script src="js/jquery-2.1.4.min.js"></script>
@@ -17,9 +19,12 @@
 	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
 	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
 	<script src='js/walkingstreets.js'></script>
+  <style>
+    #viewer { position: absolute; width: 140px; height: 140px; right: 10px; top: 10px; border: 1px solid red; z-index: 303030303; }
+  </style>
 </head>
 <body>
-
+<!-- <div id = 'viewer'></div> -->
 <div id='head'>
 	<div id='head-right'>
 		<div id='head-about'>About</div>

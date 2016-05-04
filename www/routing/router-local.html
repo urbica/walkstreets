@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Routes client</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+        body { margin: 0; width: 100%; height: 100%; }
+        .map {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <script src ='d3.min.js'></script>
+    <script src ='polyline.js'></script>
+    <script src="turf.min.js" charset="utf-8"></script>
+    <div id='map' class='map'></div>
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoid2Fsa3N0cmVldHMiLCJhIjoiY2lucjRvNTkxMDBncXZkbHl5dWY5ZDdicyJ9.MBOg1KV2_ctioadwryapJA';
+
+    var startClick = true;
+
+    var isDragging;
+    var isCursorOverPoint;
+    var whatDragging;
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        center: [37.616917,55.73917],
+        zoom: 13,
+        style: 'mapbox://styles/walkstreets/cinr4p56q00bfc7m5vxorbwog'
+    });
+
+    var tooltip = new mapboxgl.Popup({closeOnClick: false});
+
+    var regularLine = turf.featurecollection([]),
+        steplessLine = turf.featurecollection([]),
+        sidewalksLine = turf.featurecollection([]);
+
+    var regularSource = new mapboxgl.GeoJSONSource({
+          data: turf.featurecollection([])
+        }),
+        steplessSource = new mapboxgl.GeoJSONSource({
+          data: turf.featurecollection([])
+        }),
+        sidewalksSource = new mapboxgl.GeoJSONSource({
+          data: turf.featurecollection([])
+        });
+
+    var modes = [
+            { port: 5008, id: 'sidewalks', source: sidewalksSource },
+            { port: 5007, id: 'stepless', source: steplessSource },
+            { port: 5005, id: 'regular', source: regularSource }
+        ];
+
+    var startPoint = turf.featurecollection([turf.point([37.635671, 55.735949])]),
+        endPoint = turf.featurecollection([turf.point([37.592332, 55.747498])]);
+
+
+
+        var canvas = map.getCanvasContainer();
+
+        function mouseDown(e) {
+            if (!isCursorOverPoint) return;
+
+            isDragging = true;
+
+            // Set a cursor indicator
+            canvas.style.cursor = 'grab';
+
+            // Mouse events
+            map.on('mousemove', onMove);
+            map.on('mouseup', onUp);
+        }
+
+        function onMove(e) {
+          if (!isDragging) return;
+          var coords = e.lngLat;
+
+          // Set a UI indicator for dragging.
+          canvas.style.cursor = 'grabbing';
+
+          // Update the Point feature in `geojson` coordinates
+          // and call setData to the source layer `point` on it.
+          if(whatDragging == 'start') {
+            startPoint.features[0].geometry.coordinates = [coords.lng, coords.lat];
+            map.getSource(whatDragging).setData(startPoint);
+          } else {
+            endPoint.features[0].geometry.coordinates = [coords.lng, coords.lat];
+            map.getSource(whatDragging).setData(endPoint);
+          }
+
+        }
+
+        function onUp(e) {
+          whatDragging = false;
+
+          if (!isDragging) return;
+          var coords = e.lngLat;
+
+          canvas.style.cursor = '';
+          isDragging = false;
+          update();
+        }
+
+    function getLineJson(data, mode) {
+      if(data) {
+        console.log(data);
+        var points = [];
+        console.log(points);
+        polyline.decode(data.route_geometry).forEach(function(p) {
+          points.push([p[1]/10, p[0]/10]);
+          //console.log(p);
+        });
+        return turf.featurecollection([turf.linestring(points,{
+          mode: mode,
+          end_point: data.route_summary.end_point,
+          start_point: data.route_summary.start_point,
+          total_distance: data.route_summary.total_distance,
+          total_time: data.route_summary.total_time
+        })]);
+      }
+    }
+
+    function getProps(props) {
+      //console.log(props);
+      var s = '<b>' + props.mode + '</b><br/>start: ' + props.start_point + '<br/>end: ' + props.end_point + '<br/>distance: ' + props.total_distance + '<br/>time: ' + props.total_time;
+      return s;
+    }
+
+
+
+    function update() {
+      var start = startPoint.features[0].geometry.coordinates,
+          end = endPoint.features[0].geometry.coordinates;
+      modes.forEach(function(m) {
+        var url =  'http://127.0.0.1:'+m.port+'/viaroute?loc='+start[1]+','+start[0]+'&loc='+end[1]+','+end[0];
+        d3.json(url, function(data) {
+          var line = getLineJson(data, m.id);
+          //console.log(line);
+          m.source.setData(line);
+        });
+      });
+    }
+
+    map.on('load', function () {
+
+      // Add a single point to the map
+      map.addSource('start', {
+          "type": "geojson",
+          "data": startPoint
+      });
+
+      // Add a single point to the map
+      map.addSource('end', {
+          "type": "geojson",
+          "data": endPoint
+      });
+
+      map.on('mousemove', function(e) {
+          var features = map.queryRenderedFeatures(e.point, { layers: ['start','end'] });
+
+          // Change point and cursor style as a UI indicator
+          // and set a flag to enable other mouse events.
+          if (features.length) {
+              if(features[0].layer.id == 'start' || features[0].layer.id == 'end') {
+                whatDragging = features[0].layer.id;
+                canvas.style.cursor = 'move';
+                isCursorOverPoint = true;
+                map.dragPan.disable();
+              }
+          } else {
+              canvas.style.cursor = '';
+              isCursorOverPoint = false;
+              map.dragPan.enable();
+          }
+      });
+
+      // Set `true` to dispatch the event before other functions call it. This
+      // is necessary for disabling the default map dragging behaviour.
+    map.on('mousedown', mouseDown, true);
+
+    map.addSource('regular', regularSource);
+    map.addSource('stepless', steplessSource);
+    map.addSource('sidewalks', sidewalksSource);
+
+    map.addLayer({
+       "id": "regular",
+       "type": "line",
+       "source": "regular",
+       "layout": {
+           "line-join": "round",
+           "line-cap": "round"
+       },
+       "paint": {
+           "line-color": "#665",
+           "line-width": 8,
+           "line-opacity": 0.5
+       }
+     });
+
+     map.addLayer({
+        "id": "stepless",
+        "type": "line",
+        "source": "stepless",
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "#808",
+            "line-width": 8,
+            "line-opacity": 0.5
+        }
+      });
+
+      map.addLayer({
+         "id": "sidewalks",
+         "type": "line",
+         "source": "sidewalks",
+         "layout": {
+             "line-join": "round",
+             "line-cap": "round"
+         },
+         "paint": {
+             "line-color": "#08F",
+             "line-width": 8,
+             "line-opacity": 0.5
+         }
+       });
+
+       map.addLayer({
+           "id": "start",
+           "type": "circle",
+           "source": "start",
+           "paint": {
+               "circle-radius": 10,
+               "circle-color": "#3887FF"
+           }
+       });
+
+       map.addLayer({
+           "id": "end",
+           "type": "circle",
+           "source": "end",
+           "paint": {
+               "circle-radius": 10,
+               "circle-color": "#FF3338"
+           }
+       });
+
+       //set event listener
+       map.on('click', function(e) {
+         var features = map.queryRenderedFeatures(e.point, { layers: ['regular','stepless','sidewalks'] });
+         if (features.length) {
+           tooltip.setLngLat([e.lngLat.lng,e.lngLat.lat])
+              .setHTML(getProps(features[0].properties))
+              .addTo(map);
+
+         }
+
+       });
+
+       //start application
+       update();
+
+   });
+
+    </script>
+</body>
+</html>

@@ -382,6 +382,13 @@ mapboxgl.util.getJSON('styles/walkingstreets.json', function(err, style) {
 
 	}
 
+/*
+	var viewer = new Mapillary.Viewer('viewer', 'R05QNUd6bDFWbzNZNlBDR1I5Xy1vUTo5OTcxNzJlOTExYzMxNTJj','jPOzS2imoGTZfG41RoHVXw');
+	viewer.on('nodechanged', function(node) {
+		console.log(node);
+	});
+*/
+
 	function buildHash(l,lat,lng,z) {
 		var hsh;
 		hsh = "#" + "l=" + l + "&lat=" + lat.toFixed(6) + "&lng=" + lng.toFixed(6) + "&z=" + z.toFixed(2);
@@ -897,9 +904,15 @@ error: function(data){
 
 	}
 
+
+
 	function getPhoto(mode,photoblock, latLng) {
 		photoblock.text(lang.searchingPhotos[l]);
 		if(mode == "mapillary") {
+			photoblock.text("");
+//			viewer.moveCloseTo(latLng.lat, latLng.lon);
+
+/*
 			mapboxgl.util.getJSON('http://api.mapillary.com/v1/im/close?lat='+ latLng.lat +'&lon=' + latLng.lng + '&distance=20', function(err, mapillary) {
 				if (err) throw err;
 				photoblock.text("");
@@ -910,6 +923,7 @@ error: function(data){
 
 
 				mapillary.forEach(function(photo,i) {
+
 				photoblock.append('iframe')
 					.attr("src", "http://www.mapillary.com/jsapi/?image="+ photo.key + '&showMap=false')
 					.attr("width", "320")
@@ -918,6 +932,7 @@ error: function(data){
 
 
 			});
+			*/
 		}
 
 		if(mode == "panoramio") {
